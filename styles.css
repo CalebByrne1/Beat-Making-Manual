@@ -297,7 +297,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 16px;
   margin-bottom: 16px;
 }
@@ -568,9 +568,28 @@
    RESPONSIVE — COMPONENTS
 ══════════════════════════════════════════ */
 
+/* Tablet (860px and below — sidebar is now hidden, full width available)
+   auto-fit + minmax(340px) naturally shows 2 columns at ~700px+,
+   so no explicit grid override needed here.              */
 @media (max-width: 860px) {
-  .grid { grid-template-columns: 1fr; }
   .two-col { grid-template-columns: 1fr; }
   .header h1 { font-size: 52px; }
   .section-label { padding-top: 40px; }
+  .ratio-use { min-width: 80px; font-size: 9px; }
+}
+
+/* Mobile (560px and below — single column, tighter spacing) */
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  .two-col { grid-template-columns: 1fr; }
+  .card { padding: 14px 14px 18px; }
+  .card h2 { font-size: 17px; }
+  .header { padding: 32px 0 40px; }
+  .header h1 { font-size: 38px; }
+  .section-label { padding-top: 32px; font-size: 9px; letter-spacing: 2px; }
+  .chain { gap: 3px; }
+  .chain-node { font-size: 9px; padding: 4px 7px; }
+  .ratio-use { display: none; }
+  .scale-notes { font-size: 9px; }
+  .tip-text { font-size: 12px; }
 }
