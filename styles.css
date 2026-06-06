@@ -233,10 +233,6 @@
     #nav-close { display: flex; }
     .section-anchor { top: -60px; }
   }
-    #sidebar.open { transform: translateX(0); }
-    #main { margin-left: 0; padding: 24px 16px; }
-    #nav-toggle { display: block; }
-  }
 
   footer {
     margin-top: 56px;
