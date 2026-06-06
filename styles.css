@@ -11,7 +11,7 @@
     --accent3: #3cffd0;
     --accent4: #c084fc;
     --text: #e8e8e0;
-    --muted: #666660;
+    --muted: #888884;
     --mono: 'Space Mono', monospace;
     --display: 'Bebas Neue', sans-serif;
     --body: 'DM Sans', sans-serif;
@@ -26,8 +26,8 @@
     background: var(--bg);
     color: var(--text);
     font-family: var(--body);
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.65;
     display: flex;
   }
 
@@ -245,6 +245,27 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 8px;
+    align-items: center;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover {
+    color: var(--accent);
   }
 
 /* ══════════════════════════════════════════
@@ -266,6 +287,24 @@
 
 .header h1 span {
   display: block;
+  color: var(--accent);
+}
+
+#tips-toggle {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 8px 16px;
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+#tips-toggle:hover {
+  border-color: var(--accent);
   color: var(--accent);
 }
 
@@ -375,9 +414,9 @@
 .tip.collapsed .tip-icon { transform: rotate(0deg); }
 
 .tip-text {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--muted);
-  line-height: 1.65;
+  line-height: 1.7;
 }
 
 /* Collapsed: show first line only */
@@ -503,7 +542,7 @@
 ══════════════════════════════════════════ */
 
 .note {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
   border: 1px solid var(--border);
   border-left: 3px solid var(--muted);

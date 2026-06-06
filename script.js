@@ -29,6 +29,17 @@ function filterNav(query) {
   });
 }
 
+let allTipsCollapsed = false;
+
+function toggleAllTips() {
+  allTipsCollapsed = !allTipsCollapsed;
+  document.querySelectorAll('.tip').forEach(tip => {
+    tip.classList.toggle('collapsed', allTipsCollapsed);
+  });
+  const btn = document.getElementById('tips-toggle');
+  if (btn) btn.textContent = allTipsCollapsed ? 'EXPAND ALL TIPS' : 'COLLAPSE ALL TIPS';
+}
+
 const backBtn = document.getElementById('back-to-top');
 window.addEventListener('scroll', () => {
   backBtn.classList.toggle('visible', window.scrollY > 600);
