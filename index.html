@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Beat Making Manual — by Byrne Beats</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════
+     SIDEBAR NAVIGATION
+═══════════════════════════════════════ -->
+<nav id="sidebar">
+  <div class="nav-header">THE BEAT MAKING MANUAL<span>by Byrne Beats</span>
+    <button id="nav-close" onclick="closeSidebar()" title="Close menu">✕</button>
+  </div>
+  <div class="nav-search-wrap">
+    <input type="text" id="nav-search" placeholder="Search sections..." oninput="filterNav(this.value)" autocomplete="off">
+  </div>
+
+  <div class="nav-group">
+    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+      <span class="nav-group-label">Start Here</span>
+      <span class="nav-chevron">▼</span>
+    </div>
+    <div class="nav-group-links"><a class="nav-link" href="#roadmap"><span class="nav-dot dot-yellow"></span>Producer Roadmap</a>
+    <a class="nav-link" href="#foundations"><span class="nav-dot dot-yellow"></span>Foundations</a>
+    <a class="nav-link" href="#fl-basics"><span class="nav-dot dot-orange"></span>FL Studio Basics</a>
+    <a class="nav-link" href="#mix-levels"><span class="nav-dot dot-teal"></span>Mix Level Reference</a>
+    <a class="nav-link" href="#fl-tips"><span class="nav-dot dot-purple"></span>FL Tips & Tricks</a>
+  </div></div>
+
+  <div class="nav-group">
+    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+      <span class="nav-group-label">Production</span>
+      <span class="nav-chevron">▼</span>
+    </div>
+    <div class="nav-group-links"><a class="nav-link" href="#drums"><span class="nav-dot dot-yellow"></span>Drums & Sampling</a>
+    <a class="nav-link" href="#sound-selection"><span class="nav-dot dot-yellow"></span>Sound Selection</a>
+    <a class="nav-link" href="#808s"><span class="nav-dot dot-orange"></span>808s</a>
+    <a class="nav-link" href="#melodies"><span class="nav-dot dot-teal"></span>Melodies</a>
+    <a class="nav-link" href="#harmony"><span class="nav-dot dot-purple"></span>Harmonizing Melodies</a>
+    <a class="nav-link" href="#basslines"><span class="nav-dot dot-teal"></span>Basslines</a>
+    <a class="nav-link" href="#arps"><span class="nav-dot dot-yellow"></span>Arpeggios</a>
+    <a class="nav-link" href="#chords"><span class="nav-dot dot-orange"></span>Chord Progressions</a>
+    <a class="nav-link" href="#musical-layering"><span class="nav-dot dot-yellow"></span>Musical Layering</a>
+  </div></div>
+
+  <div class="nav-group">
+    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+      <span class="nav-group-label">Arrangement</span>
+      <span class="nav-chevron">▼</span>
+    </div>
+    <div class="nav-group-links"><a class="nav-link" href="#variation"><span class="nav-dot dot-teal"></span>Creating Variation</a>
+    <a class="nav-link" href="#space"><span class="nav-dot dot-yellow"></span>Creating Space</a>
+    <a class="nav-link" href="#transitions"><span class="nav-dot dot-orange"></span>Transitions</a>
+    <a class="nav-link" href="#arrangement"><span class="nav-dot dot-purple"></span>Arrangement Deep Dive</a>
+    <a class="nav-link" href="#song-structures"><span class="nav-dot dot-orange"></span>Song Structure Templates</a>
+  </div></div>
+
+  <div class="nav-group">
+    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+      <span class="nav-group-label">Mixing</span>
+      <span class="nav-chevron">▼</span>
+    </div>
+    <div class="nav-group-links"><a class="nav-link" href="#compression"><span class="nav-dot dot-yellow"></span>Compression</a>
+    <a class="nav-link" href="#eq"><span class="nav-dot dot-teal"></span>EQ & Frequency</a>
+    <a class="nav-link" href="#mixing"><span class="nav-dot dot-orange"></span>Mixing Fundamentals</a>
+    <a class="nav-link" href="#mastering"><span class="nav-dot dot-yellow"></span>Mastering</a>
+    <a class="nav-link" href="#signal-chain"><span class="nav-dot dot-teal"></span>Signal Chain Reference</a>
+    <a class="nav-link" href="#diagrams"><span class="nav-dot dot-purple"></span>Signal Chain Diagrams</a>
+  </div></div>
+
+  <div class="nav-group">
+    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+      <span class="nav-group-label">Theory & Creativity</span>
+      <span class="nav-chevron">▼</span>
+    </div>
+    <div class="nav-group-links"><a class="nav-link" href="#music-theory"><span class="nav-dot dot-orange"></span>Music Theory</a>
+    <a class="nav-link" href="#scales"><span class="nav-dot dot-yellow"></span>Scales & Emotions</a>
+    <a class="nav-link" href="#synth"><span class="nav-dot dot-purple"></span>Synth & Sound Design</a>
+    <a class="nav-link" href="#experimental"><span class="nav-dot dot-teal"></span>Experimental</a>
+    <a class="nav-link" href="#ear-training"><span class="nav-dot dot-yellow"></span>Ear Training</a>
+    <a class="nav-link" href="#workflow"><span class="nav-dot dot-orange"></span>Workflow & Mindset</a>
+  </div></div>
+
+  <div class="nav-group">
+    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+      <span class="nav-group-label">Plugins & Tools</span>
+      <span class="nav-chevron">▼</span>
+    </div>
+    <div class="nav-group-links"><a class="nav-link" href="#free-plugins"><span class="nav-dot dot-yellow"></span>Free Plugins Worth Using</a>
+    <a class="nav-link" href="#free-synths"><span class="nav-dot dot-teal"></span>Free Synths Worth Using</a>
+    <a class="nav-link" href="#upgrade-path"><span class="nav-dot dot-purple"></span>Upgrade Path — Free to Paid</a>
+  </div></div>
+
+  <div class="nav-group">
+    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+      <span class="nav-group-label">Reference</span>
+      <span class="nav-chevron">▼</span>
+    </div>
+    <div class="nav-group-links"><a class="nav-link" href="#common-mistakes"><span class="nav-dot dot-yellow"></span>Common Mistakes</a>
+    <a class="nav-link" href="#glossary"><span class="nav-dot dot-teal"></span>Glossary</a>
+  </div></div>
+</nav>
+
+<div id="sidebar-backdrop" onclick="closeSidebar()"></div>
+<button id="nav-toggle" onclick="openSidebar()" aria-label="Open navigation menu">☰ MENU</button>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ TOP</button>
+
+<!-- ═══════════════════════════════════════
+     MAIN CONTENT
+═══════════════════════════════════════ -->
+<div id="main">
+
+<div class="header">
+  <div>
+    <div style="font-family:var(--mono);font-size:11px;letter-spacing:3px;color:var(--accent2);text-transform:uppercase;margin-bottom:10px;">by Byrne Beats</div>
+    <h1>THE BEAT<span>MAKING MANUAL</span></h1>
+    <p style="font-size:13px;color:var(--muted);max-width:480px;margin-top:14px;line-height:1.7;font-weight:300;">A free, no-fluff reference for FL Studio producers. Covers everything from drum routing and 808 mixing to music theory, sound design, and mastering — built from real production sessions, not textbooks.</p>
+    <p style="font-size:12px;color:var(--muted);max-width:480px;margin-top:10px;line-height:1.7;font-weight:300;opacity:0.7;">New here? Start with the <a href="#roadmap" style="color:var(--accent);text-decoration:none;">Producer Roadmap</a> to find where you are and what to focus on next. Use the sidebar to jump to any section. Everything is organized from beginner foundations through to advanced mixing and theory.</p>
+  </div>
+</div>
+
+<footer>
+  <span>FL STUDIO · VITAL · KILOHEARTS · MIXING · THEORY</span>
+  <span>THE BEAT MAKING MANUAL — BYRNE BEATS</span>
+</footer>
+
+</div><!-- /main -->
+
+<script src="script.js"></script>
+
+</body>

@@ -1,0 +1,380 @@
+<!-- ══════════════ COMPRESSION ══════════════ -->
+<span class="section-anchor" id="compression"></span>
+<div class="section-label">Compression</div>
+<div class="grid">
+
+  <div class="card yellow">
+    <div class="card-label">Foundation</div>
+    <h2>HOW COMPRESSION WORKS</h2>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Threshold:</strong> The level where compression kicks in. Lower = more compression engaged. Aim for <code>-18 to -24dB</code> on drums to get meaningful gain reduction.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Ratio:</strong> How hard it clamps above threshold. 2:1 = gentle glue. 4:1 = moderate. 8:1+ = heavy. Limiting = ∞:1.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Attack:</strong> How fast compression reacts. Slow attack (30–100ms) lets transients through for punch. Fast attack (1–5ms) tames peaks, good for controlling sibilance or harsh transients.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Release:</strong> How fast compression lets go. Too fast = pumping. Too slow = squashed sustain. Match release to the tempo and groove of the track.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Make-up gain:</strong> Compensate for gain reduction. Always gain-match before A/B testing — louder almost always sounds better regardless of quality.</div></div>
+    <div class="value-row">
+      <div class="value-chip hi">Drums: 4:1–8:1</div>
+      <div class="value-chip or">Bus: 2:1–4:1</div>
+      <div class="value-chip te">Parallel crush: 8:1–∞</div>
+    </div>
+  </div>
+
+  <div class="card teal">
+    <div class="card-label">Use Cases</div>
+    <h2>COMPRESSION TYPES</h2>
+    <div class="ratio-vis"><div class="ratio-label">2:1</div><div class="ratio-bar-wrap"><div class="ratio-bar" style="width:20%"></div></div><div class="ratio-use">Glue, bus, gentle shaping</div></div>
+    <div class="ratio-vis"><div class="ratio-label">4:1</div><div class="ratio-bar-wrap"><div class="ratio-bar" style="width:40%"></div></div><div class="ratio-use">Drums, standard control</div></div>
+    <div class="ratio-vis"><div class="ratio-label">8:1</div><div class="ratio-bar-wrap"><div class="ratio-bar" style="width:65%"></div></div><div class="ratio-use">Aggressive, parallel crush</div></div>
+    <div class="ratio-vis"><div class="ratio-label">∞:1</div><div class="ratio-bar-wrap"><div class="ratio-bar" style="width:100%"></div></div><div class="ratio-use">Limiting, brick wall</div></div>
+    <div class="tip" style="margin-top:12px"><div class="tip-icon">▸</div><div class="tip-text"><strong>Serial:</strong> One compressor in the signal path. Simpler. Can kill transients if pushed too hard.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Parallel:</strong> Compressed signal blended with dry. Preserves transients, adds body and sustain. Preferred for sampled drums.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Sidechain:</strong> External signal triggers compression. Classic pump: kick triggers compression on bass or pad.</div></div>
+  </div>
+
+  <div class="card orange">
+    <div class="card-label">FL Studio / Settings</div>
+    <h2>COMPRESSOR SETTINGS</h2>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Fruity Compressor</strong> — preferred for drum bus. Simple, transparent. Use when you want clean gain reduction without coloration or multiband phase issues.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Fruity Limiter (comp mode)</strong> — versatile. Set threshold low enough (~<code>-18 to -24dB</code>) to actually engage the compressor. The waveform display shows output level, not gain reduction — you can't read GR directly from it.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>kHs Compressor</strong> — part of the free Kilohearts Essentials pack. May have better visual feedback than Fruity options. Worth exploring for drum bus or pre-master work.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Maximus</strong> — avoid on drum buses. Multiband introduces phase artifacts. Reserve for specific multiband tasks, not general compression.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Judging GR without a meter:</strong> Bypass compressor and compensate with make-up gain until levels match. The difference between where the gain was vs. where you had to boost it back = roughly how much GR is happening.</div></div>
+  </div>
+
+</div>
+
+<!-- ══════════════ EQ ══════════════ -->
+<span class="section-anchor" id="eq"></span>
+<div class="section-label">EQ & Frequency</div>
+<div class="grid">
+
+  <div class="card white wide">
+    <div class="card-label">Reference</div>
+    <h2>FREQUENCY SPECTRUM MAP</h2>
+    <svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;margin:12px 0;">
+      <defs>
+        <linearGradient id="specGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%"   stop-color="#1a0a2e"/>
+          <stop offset="12%"  stop-color="#0d3b6e"/>
+          <stop offset="28%"  stop-color="#0e6b55"/>
+          <stop offset="45%"  stop-color="#1a6b1a"/>
+          <stop offset="62%"  stop-color="#7a6b00"/>
+          <stop offset="78%"  stop-color="#8b3a00"/>
+          <stop offset="100%" stop-color="#5a0a0a"/>
+        </linearGradient>
+      </defs>
+      <rect x="10" y="30" width="880" height="60" rx="2" fill="url(#specGrad)" opacity="0.85"/>
+      <path d="M10,90 Q60,88 100,82 Q150,72 200,65 Q260,55 320,52 Q390,48 450,50 Q510,52 560,54 Q620,58 670,62 Q720,68 770,74 Q820,80 880,90" fill="none" stroke="rgba(232,255,60,0.5)" stroke-width="1.5"/>
+      <line x1="120" y1="28" x2="120" y2="92" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <line x1="250" y1="28" x2="250" y2="92" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <line x1="400" y1="28" x2="400" y2="92" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <line x1="560" y1="28" x2="560" y2="92" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <line x1="690" y1="28" x2="690" y2="92" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <line x1="790" y1="28" x2="790" y2="92" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+      <text x="65"  y="22" font-family="'Space Mono',monospace" font-size="9" fill="#3cffd0" text-anchor="middle">SUB</text>
+      <text x="185" y="22" font-family="'Space Mono',monospace" font-size="9" fill="#3cffd0" text-anchor="middle">LOW BASS</text>
+      <text x="325" y="22" font-family="'Space Mono',monospace" font-size="9" fill="#e8ff3c" text-anchor="middle">LOW MIDS</text>
+      <text x="480" y="22" font-family="'Space Mono',monospace" font-size="9" fill="#e8ff3c" text-anchor="middle">MIDS</text>
+      <text x="625" y="22" font-family="'Space Mono',monospace" font-size="9" fill="#ff6b35" text-anchor="middle">HIGH MIDS</text>
+      <text x="740" y="22" font-family="'Space Mono',monospace" font-size="9" fill="#ff6b35" text-anchor="middle">PRESENCE</text>
+      <text x="835" y="22" font-family="'Space Mono',monospace" font-size="9" fill="#c084fc" text-anchor="middle">AIR</text>
+      <text x="10"  y="108" font-family="'Space Mono',monospace" font-size="8" fill="#444" text-anchor="start">20Hz</text>
+      <text x="120" y="108" font-family="'Space Mono',monospace" font-size="8" fill="#444" text-anchor="middle">60Hz</text>
+      <text x="250" y="108" font-family="'Space Mono',monospace" font-size="8" fill="#444" text-anchor="middle">250Hz</text>
+      <text x="400" y="108" font-family="'Space Mono',monospace" font-size="8" fill="#444" text-anchor="middle">1kHz</text>
+      <text x="560" y="108" font-family="'Space Mono',monospace" font-size="8" fill="#444" text-anchor="middle">3kHz</text>
+      <text x="690" y="108" font-family="'Space Mono',monospace" font-size="8" fill="#444" text-anchor="middle">8kHz</text>
+      <text x="790" y="108" font-family="'Space Mono',monospace" font-size="8" fill="#444" text-anchor="middle">12kHz</text>
+      <text x="890" y="108" font-family="'Space Mono',monospace" font-size="8" fill="#444" text-anchor="end">20kHz</text>
+      <text x="65"  y="130" font-family="'DM Sans',sans-serif" font-size="10" fill="#666" text-anchor="middle">808 sub</text>
+      <text x="65"  y="143" font-family="'DM Sans',sans-serif" font-size="10" fill="#666" text-anchor="middle">kick sub</text>
+      <text x="185" y="130" font-family="'DM Sans',sans-serif" font-size="10" fill="#666" text-anchor="middle">808 body</text>
+      <text x="185" y="143" font-family="'DM Sans',sans-serif" font-size="10" fill="#666" text-anchor="middle">kick body</text>
+      <text x="325" y="130" font-family="'DM Sans',sans-serif" font-size="10" fill="#e8e8e0" text-anchor="middle">mud zone</text>
+      <text x="325" y="143" font-family="'DM Sans',sans-serif" font-size="10" fill="#666" text-anchor="middle">warmth</text>
+      <text x="480" y="130" font-family="'DM Sans',sans-serif" font-size="10" fill="#e8e8e0" text-anchor="middle">snare body</text>
+      <text x="480" y="143" font-family="'DM Sans',sans-serif" font-size="10" fill="#666" text-anchor="middle">vocals</text>
+      <text x="625" y="130" font-family="'DM Sans',sans-serif" font-size="10" fill="#e8e8e0" text-anchor="middle">drum attack</text>
+      <text x="625" y="143" font-family="'DM Sans',sans-serif" font-size="10" fill="#666" text-anchor="middle">definition</text>
+      <text x="740" y="130" font-family="'DM Sans',sans-serif" font-size="10" fill="#e8e8e0" text-anchor="middle">hi-hats</text>
+      <text x="740" y="143" font-family="'DM Sans',sans-serif" font-size="10" fill="#666" text-anchor="middle">cymbal edge</text>
+      <text x="835" y="130" font-family="'DM Sans',sans-serif" font-size="10" fill="#e8e8e0" text-anchor="middle">sheen</text>
+      <text x="835" y="143" font-family="'DM Sans',sans-serif" font-size="10" fill="#666" text-anchor="middle">sparkle</text>
+      <text x="325" y="168" font-family="'Space Mono',monospace" font-size="9" fill="#ff6b35" text-anchor="middle">↓ CUT for clarity</text>
+      <text x="480" y="168" font-family="'Space Mono',monospace" font-size="9" fill="#e8ff3c" text-anchor="middle">↑ BOOST for presence</text>
+      <text x="835" y="168" font-family="'Space Mono',monospace" font-size="9" fill="#c084fc" text-anchor="middle">↑ shelf for air</text>
+    </svg>
+
+  <div class="card yellow">
+    <div class="card-label">EQ Principles</div>
+    <h2>GENERAL EQ RULES</h2>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Cut before you boost.</strong> Removing problem frequencies makes room. Boosting on top of mud just makes more mud.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>High-pass everything that doesn't need sub.</strong> Pads, guitars, vocals — clean below 80Hz. Even tiny cuts clear meaningful headroom.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Narrow cuts, wide boosts.</strong> Surgical narrow Q for problem frequencies. Wide shelves or gentle bells for adding character.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Always EQ in context.</strong> Solo EQing is deceptive. What sounds right soloed often sounds wrong in the full mix.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Don't over-boost.</strong> More than +4–6dB with a narrow bell usually means the sample needs replacing, not more EQ.</div></div>
+  </div>
+
+  <div class="card teal">
+    <div class="card-label">Drum Bus EQ</div>
+    <h2>DRUM BUS EQ</h2>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>High-pass the Drum Crush track</strong> at <code>80–120Hz</code>. The main bus handles the low end — the crush track only needs mids and up for body and energy.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Tame harsh highs</strong> on the crush track (8–12kHz shelf cut). Heavily compressed hi-hats get brittle.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Boost mids (1–3kHz)</strong> on the crush track for extra snare body and aggression to blend back in.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>High-pass reverb returns</strong> at 100–200Hz. Low-end reverb = mud, not space.</div></div>
+  </div>
+
+</div>
+
+<!-- ══════════════ MIXING ══════════════ -->
+<span class="section-anchor" id="mixing"></span>
+<div class="section-label">Mixing</div>
+<div class="grid">
+
+  <div class="card orange">
+    <div class="card-label">Fundamentals</div>
+    <h2>MIX FUNDAMENTALS</h2>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Gain stage before anything else.</strong> Individual tracks peaking around <code>-12 to -18dBFS</code>. Headroom first, then mix.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Mix in mono first.</strong> If it doesn't work in mono, stereo width is masking problems. Fix translation before adding width.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Kick and bass are the foundation.</strong> Balance these two first. Everything else sits around them.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Reference constantly.</strong> Your ears adjust to your own mix. Comparing against a commercial track recalibrates them.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Take breaks.</strong> 20–30 min away resets ear fatigue. Decisions on fresh ears are almost always better.</div></div>
+  </div>
+
+  <div class="card yellow">
+    <div class="card-label">Faders & Sends</div>
+    <h2>FADER DISCIPLINE</h2>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Blend with faders, not send amounts.</strong> Sends at 100%, use track faders for blend. Applies to parallel tracks and reverb/delay returns.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Low-level monitoring test.</strong> If the mix still sounds balanced at low volume, the frequency balance is solid. Quiet = brutal truth-teller.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Automation over static faders.</strong> Even subtle fader moves during transitions add energy and dimension a static mix can't have.</div></div>
+  </div>
+
+  <div class="card teal">
+    <div class="card-label">Reverb & Delay</div>
+    <h2>REVERB & DELAY</h2>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Send/return setup.</strong> Reverbs and delays on dedicated return tracks. Multiple elements feeding the same space = coherent room glue.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>High-pass reverb returns</strong> below 100–200Hz. Low-end reverb = mud.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Pre-delay (10–25ms)</strong> separates the dry source from the reverb tail. Maintains clarity while keeping the effect present.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Delay throws for variation.</strong> Automated delay on a single word or snare hit adds interest without a constant wet effect.</div></div>
+  </div>
+
+  <div class="card white">
+    <div class="card-label">Stereo Field</div>
+    <h2>PAN & WIDTH</h2>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Kick and bass: center.</strong> Low frequencies lose energy and cause phase issues when panned.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Hi-hats can be panned subtly</strong> (L or R 20–40%) to open up the center for main elements.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Wide pads/chords fill the sides.</strong> If your melody is centered, widen chords to fill the stereo field.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Haas effect (10–40ms delay on one side)</strong> creates width without pitch issues — but always check mono compatibility.</div></div>
+  </div>
+
+</div>
+
+<!-- ══════════════ MASTERING ══════════════ -->
+<span class="section-anchor" id="mastering"></span>
+<div class="section-label">Mastering</div>
+<div class="grid">
+
+  <div class="card orange">
+    <div class="card-label">Master Chain</div>
+    <h2>MASTER CHAIN</h2>
+    <div class="chain">
+      <div class="chain-node">EQ</div><div class="chain-arrow">→</div>
+      <div class="chain-node">Compressor</div><div class="chain-arrow">→</div>
+      <div class="chain-node">Soft Clipper</div><div class="chain-arrow">→</div>
+      <div class="chain-node">Stereo</div><div class="chain-arrow">→</div>
+      <div class="chain-node hl">Limiter</div>
+    </div>
+    <div class="tip" style="margin-top:12px"><div class="tip-icon">▸</div><div class="tip-text"><strong>EQ (corrective):</strong> Fix frequency problems that made it through the mix. Small moves — 0.5 to 2dB max. More than that = a mix problem, not a mastering problem.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Compressor (glue):</strong> 1.5:1–2:1, attack 50–100ms, release 200–400ms. 1–3dB GR max. Should be almost inaudible — you should only notice it when bypassed.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Fruity Soft Clipper:</strong> Threshold -1 to -2dB. Rounds peaks so the limiter has less to catch. Post knob = compensate for level lost to clipping only. Use track fader (pre-master output) for final level control.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Stereo width:</strong> Check/adjust stereo width. Mono the low end below ~150Hz. About translation, not creative decisions.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Limiter ceiling: <code>-1dBTP</code></strong> (true peak). 1–3dB of gain reduction at most. If it's working harder, something upstream needs fixing.</div></div>
+  </div>
+
+  <div class="card yellow">
+    <div class="card-label">Pre-Master Chain</div>
+    <h2>PRE-MASTER CHAIN</h2>
+    <div class="chain">
+      <div class="chain-node or">Bus Compressor</div><div class="chain-arrow">→</div>
+      <div class="chain-node">Saturation</div>
+    </div>
+    <div class="tip" style="margin-top:12px"><div class="tip-icon">▸</div><div class="tip-text"><strong>This is where heavier lifting happens.</strong> The pre-master does the work; the master tidies up. If the master is working hard, add more on the pre-master instead.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Bus compressor:</strong> 3:1–4:1, attack 30–50ms, release 100–200ms. Aim for 3–6dB GR on the loudest parts. This is where the track starts to feel locked together.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Saturation/color here, not on master.</strong> Character decisions belong on the pre-master. The master chain should be mostly corrective and transparent.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Pre-master output:</strong> aim for peaks around <code>-6 to -3dBFS</code> going into the master chain.</div></div>
+  </div>
+
+  <div class="card teal">
+    <div class="card-label">Loudness & Translation</div>
+    <h2>LOUDNESS TARGETS</h2>
+    <div class="value-row">
+      <div class="value-chip hi">Spotify: –14 LUFS</div>
+      <div class="value-chip hi">Apple: –16 LUFS</div>
+      <div class="value-chip">YouTube: –14 LUFS</div>
+    </div>
+    <div class="tip" style="margin-top:12px"><div class="tip-icon">▸</div><div class="tip-text"><strong>Mastering too loud backfires.</strong> Platforms normalize loudness. Over-limiting to hit –7 LUFS means your track gets turned down AND sounds squashed.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Dynamic range goal: 6–10 DR</strong> for most modern beats. Trap often goes lower, acoustic goes higher.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Check on multiple speakers.</strong> Laptop, headphones, earbuds, car. If it translates everywhere, it's done.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Mastering can't fix mix problems.</strong> Muddy mix = muddy master. A limiter makes a bad mix loud and bad. Fix problems in the mix.</div></div>
+  </div>
+
+</div>
+
+<!-- ══════════════ SIGNAL CHAIN REFERENCE ══════════════ -->
+<span class="section-anchor" id="signal-chain"></span>
+<div class="section-label">Signal Chain Reference</div>
+<div class="grid">
+
+  <div class="card teal">
+    <div class="card-label">Saturation Tools</div>
+    <h2>FL STUDIO SATURATION TOOLS</h2>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>kHs Clipper</strong> (Kilohearts Essentials — free) — a solid option for master saturation. Soft clipping adds harmonic color and rounds peaks simultaneously.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Fruity Soft Clipper</strong> (native) — threshold + post makeup gain. Threshold near top for peak control, lower for character. Post = compensate for level lost, not to boost overall. Default -4.4dB is aggressive — start closer to -1dB on master.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Fruity Blood Overdrive</strong> (native) — keep Color and Pre-amp low for subtle saturation. Best on individual tracks, works on master at very low settings.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>kHs Distortion</strong> (Kilohearts Essentials — free) — more aggressive, better for individual elements like 808s and leads. Try Saturate mode for musical results.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Distructor</strong> (native) — full-featured distortion unit. More control than Blood Overdrive. Explore at low drive settings for character on individual tracks.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Third-party options worth knowing:</strong> Softube Saturation Knob (free), Klanghelm SDRR (paid), Decapitator (paid) — all offer more refined saturation character than native FL tools for critical chain positions like the master.</div></div>
+  </div>
+
+  <div class="card orange">
+    <div class="card-label">Level Targets</div>
+    <h2>GAIN STAGING TARGETS</h2>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Individual tracks:</strong> peaks <code>-12 to -18dBFS</code>.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Pre-master output:</strong> peaks <code>-6 to -3dBFS</code> into the master chain.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Master output ceiling:</strong> <code>-1dBTP</code> true peak.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Streaming targets:</strong> Spotify –14 LUFS, Apple –16 LUFS, YouTube –14 LUFS.</div></div>
+    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Gain staging ≠ mixing.</strong> Setting healthy levels is the foundation. Actual mix balance happens with faders after gain staging is done.</div></div>
+    <div class="note yellow-note">⚠ Order matters throughout the chain. EQ before compression changes what gets compressed. Saturation before limiting gives the limiter a smoother signal. Always think about what each plugin is receiving, not just what it's doing.</div>
+  </div>
+
+</div>
+
+<!-- ══════════════ SIGNAL CHAIN DIAGRAMS ══════════════ -->
+<span class="section-anchor" id="diagrams"></span>
+<div class="section-label">Signal Chain Diagrams</div>
+<div class="grid">
+
+  <div class="card yellow wide">
+    <div class="card-label">Drum Routing</div>
+    <h2>DRUM BUS ROUTING DIAGRAM</h2>
+    <svg viewBox="0 0 860 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;margin:16px 0;">
+      <rect x="10" y="20" width="110" height="36" rx="2" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+      <text x="65" y="43" font-family="'Space Mono',monospace" font-size="10" fill="#e8e8e0" text-anchor="middle">KICK</text>
+      <rect x="10" y="68" width="110" height="36" rx="2" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+      <text x="65" y="91" font-family="'Space Mono',monospace" font-size="10" fill="#e8e8e0" text-anchor="middle">SNARE</text>
+      <rect x="10" y="116" width="110" height="36" rx="2" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+      <text x="65" y="139" font-family="'Space Mono',monospace" font-size="10" fill="#e8e8e0" text-anchor="middle">HI-HATS</text>
+      <rect x="10" y="164" width="110" height="36" rx="2" fill="#181818" stroke="#2a2a2a" stroke-width="1"/>
+      <text x="65" y="187" font-family="'Space Mono',monospace" font-size="10" fill="#e8e8e0" text-anchor="middle">PERC / etc</text>
+      <line x1="120" y1="38" x2="200" y2="90" stroke="#2a2a2a" stroke-width="1.5"/>
+      <line x1="120" y1="86" x2="200" y2="96" stroke="#2a2a2a" stroke-width="1.5"/>
+      <line x1="120" y1="134" x2="200" y2="102" stroke="#2a2a2a" stroke-width="1.5"/>
+      <line x1="120" y1="182" x2="200" y2="108" stroke="#2a2a2a" stroke-width="1.5"/>
+      <rect x="200" y="68" width="130" height="56" rx="2" fill="#1a1a00" stroke="#e8ff3c" stroke-width="1.5"/>
+      <text x="265" y="90" font-family="'Space Mono',monospace" font-size="9" fill="#e8ff3c" text-anchor="middle">DRUM BUS</text>
+      <text x="265" y="105" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">EQ · light comp</text>
+      <line x1="265" y1="68" x2="265" y2="40" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="265" y1="40" x2="380" y2="40" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4,3"/>
+      <line x1="380" y1="40" x2="380" y2="58" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4,3"/>
+      <text x="322" y="34" font-family="'Space Mono',monospace" font-size="8" fill="#444" text-anchor="middle">send (parallel)</text>
+      <rect x="340" y="58" width="130" height="56" rx="2" fill="#1a0800" stroke="#ff6b35" stroke-width="1.5"/>
+      <text x="405" y="80" font-family="'Space Mono',monospace" font-size="9" fill="#ff6b35" text-anchor="middle">DRUM CRUSH</text>
+      <text x="405" y="95" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">heavy comp · HPF</text>
+      <text x="405" y="107" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">blend with fader</text>
+      <line x1="330" y1="96" x2="530" y2="118" stroke="#2a2a2a" stroke-width="1.5"/>
+      <line x1="470" y1="86" x2="530" y2="112" stroke="#2a2a2a" stroke-width="1.5"/>
+      <rect x="530" y="90" width="130" height="56" rx="2" fill="#0a1a0a" stroke="#3cffd0" stroke-width="1.5"/>
+      <text x="595" y="112" font-family="'Space Mono',monospace" font-size="9" fill="#3cffd0" text-anchor="middle">PRE-MASTER</text>
+      <text x="595" y="127" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">glue comp · sat</text>
+      <line x1="660" y1="118" x2="720" y2="118" stroke="#2a2a2a" stroke-width="1.5"/>
+      <polygon points="718,113 728,118 718,123" fill="#2a2a2a"/>
+      <rect x="728" y="90" width="120" height="56" rx="2" fill="#0f0f0f" stroke="#c084fc" stroke-width="1.5"/>
+      <text x="788" y="112" font-family="'Space Mono',monospace" font-size="9" fill="#c084fc" text-anchor="middle">MASTER</text>
+      <text x="788" y="127" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">EQ·comp·clip·lim</text>
+      <line x1="10" y1="230" x2="40" y2="230" stroke="#2a2a2a" stroke-width="1.5"/>
+      <text x="46" y="234" font-family="'DM Sans',sans-serif" font-size="10" fill="#666">Serial signal</text>
+      <line x1="140" y1="230" x2="170" y2="230" stroke="#2a2a2a" stroke-width="1.5" stroke-dasharray="4,3"/>
+      <text x="176" y="234" font-family="'DM Sans',sans-serif" font-size="10" fill="#666">Parallel send</text>
+    </svg>
+    <div class="note">⚠ Send knobs stay at 100%. All blend control happens with track faders — not send amounts. The Drum Crush is blended back in by ear alongside the main Drum Bus signal.</div>
+  </div>
+
+  <div class="card teal wide">
+    <div class="card-label">Master Chain</div>
+    <h2>MASTER CHAIN DIAGRAM</h2>
+    <svg viewBox="0 0 860 140" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;margin:16px 0;">
+      <rect x="10" y="42" width="110" height="56" rx="2" fill="#0a1a0a" stroke="#3cffd0" stroke-width="1.5"/>
+      <text x="65" y="64" font-family="'Space Mono',monospace" font-size="9" fill="#3cffd0" text-anchor="middle">PRE-MASTER</text>
+      <text x="65" y="78" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">peaks -6 to</text>
+      <text x="65" y="90" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">-3dBFS out</text>
+      <line x1="120" y1="70" x2="150" y2="70" stroke="#2a2a2a" stroke-width="1.5"/>
+      <polygon points="148,65 158,70 148,75" fill="#2a2a2a"/>
+      <rect x="158" y="42" width="100" height="56" rx="2" fill="#181818" stroke="#e8ff3c" stroke-width="1.5"/>
+      <text x="208" y="64" font-family="'Space Mono',monospace" font-size="9" fill="#e8ff3c" text-anchor="middle">EQ</text>
+      <text x="208" y="78" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">corrective</text>
+      <text x="208" y="90" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">±0.5–2dB max</text>
+      <line x1="258" y1="70" x2="288" y2="70" stroke="#2a2a2a" stroke-width="1.5"/>
+      <polygon points="286,65 296,70 286,75" fill="#2a2a2a"/>
+      <rect x="296" y="42" width="110" height="56" rx="2" fill="#181818" stroke="#e8ff3c" stroke-width="1.5"/>
+      <text x="351" y="60" font-family="'Space Mono',monospace" font-size="9" fill="#e8ff3c" text-anchor="middle">COMPRESSOR</text>
+      <text x="351" y="74" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">1.5:1–2:1</text>
+      <text x="351" y="86" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">1–3dB GR max</text>
+      <line x1="406" y1="70" x2="436" y2="70" stroke="#2a2a2a" stroke-width="1.5"/>
+      <polygon points="434,65 444,70 434,75" fill="#2a2a2a"/>
+      <rect x="444" y="42" width="110" height="56" rx="2" fill="#181818" stroke="#ff6b35" stroke-width="1.5"/>
+      <text x="499" y="60" font-family="'Space Mono',monospace" font-size="9" fill="#ff6b35" text-anchor="middle">SOFT CLIPPER</text>
+      <text x="499" y="74" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">-1 to -2dB thr</text>
+      <text x="499" y="86" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">peak rounding</text>
+      <line x1="554" y1="70" x2="584" y2="70" stroke="#2a2a2a" stroke-width="1.5"/>
+      <polygon points="582,65 592,70 582,75" fill="#2a2a2a"/>
+      <rect x="592" y="42" width="90" height="56" rx="2" fill="#181818" stroke="#3cffd0" stroke-width="1.5"/>
+      <text x="637" y="60" font-family="'Space Mono',monospace" font-size="9" fill="#3cffd0" text-anchor="middle">STEREO</text>
+      <text x="637" y="74" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">width check</text>
+      <text x="637" y="86" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">mono &lt;150Hz</text>
+      <line x1="682" y1="70" x2="712" y2="70" stroke="#2a2a2a" stroke-width="1.5"/>
+      <polygon points="710,65 720,70 710,75" fill="#2a2a2a"/>
+      <rect x="720" y="42" width="130" height="56" rx="2" fill="#0f0f18" stroke="#c084fc" stroke-width="1.5"/>
+      <text x="785" y="60" font-family="'Space Mono',monospace" font-size="9" fill="#c084fc" text-anchor="middle">LIMITER</text>
+      <text x="785" y="74" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">ceiling -1dBTP</text>
+      <text x="785" y="86" font-family="'DM Sans',sans-serif" font-size="9" fill="#666" text-anchor="middle">1–3dB GR max</text>
+      <text x="855" y="74" font-family="'Space Mono',monospace" font-size="8" fill="#444" text-anchor="end">OUT</text>
+    </svg>
+  </div>
+
+  <div class="card orange wide">
+    <div class="card-label">Stereo Field</div>
+    <h2>STEREO FIELD — WHERE ELEMENTS SIT</h2>
+    <svg viewBox="0 0 860 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;margin:16px 0;">
+      <defs>
+        <radialGradient id="fieldGrad" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#1a1a00" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#0a0a0a" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="430" cy="90" rx="400" ry="75" fill="url(#fieldGrad)"/>
+      <line x1="430" y1="10" x2="430" y2="170" stroke="#2a2a2a" stroke-width="1" stroke-dasharray="4,4"/>
+      <text x="430" y="8" font-family="'Space Mono',monospace" font-size="9" fill="#444" text-anchor="middle">CENTER</text>
+      <text x="30"  y="95" font-family="'Space Mono',monospace" font-size="9" fill="#444" text-anchor="start">L</text>
+      <text x="830" y="95" font-family="'Space Mono',monospace" font-size="9" fill="#444" text-anchor="end">R</text>
+      <rect x="370" y="30" width="120" height="22" rx="2" fill="#1a1a00" stroke="#e8ff3c" stroke-width="1"/>
+      <text x="430" y="45" font-family="'Space Mono',monospace" font-size="9" fill="#e8ff3c" text-anchor="middle">KICK · 808 · BASS</text>
+      <rect x="380" y="58" width="100" height="22" rx="2" fill="#1a1a00" stroke="#e8ff3c" stroke-width="1"/>
+      <text x="430" y="73" font-family="'Space Mono',monospace" font-size="9" fill="#e8ff3c" text-anchor="middle">LEAD MELODY</text>
+      <rect x="395" y="86" width="70" height="22" rx="2" fill="#181818" stroke="#666" stroke-width="1"/>
+      <text x="430" y="101" font-family="'Space Mono',monospace" font-size="9" fill="#888" text-anchor="middle">SNARE</text>
+      <rect x="270" y="110" width="80" height="22" rx="2" fill="#181818" stroke="#ff6b35" stroke-width="1"/>
+      <text x="310" y="125" font-family="'Space Mono',monospace" font-size="9" fill="#ff6b35" text-anchor="middle">HI-HATS L</text>
+      <rect x="510" y="110" width="80" height="22" rx="2" fill="#181818" stroke="#ff6b35" stroke-width="1"/>
+      <text x="550" y="125" font-family="'Space Mono',monospace" font-size="9" fill="#ff6b35" text-anchor="middle">HI-HATS R</text>
+      <rect x="100" y="70" width="110" height="22" rx="2" fill="#181818" stroke="#3cffd0" stroke-width="1"/>
+      <text x="155" y="85" font-family="'Space Mono',monospace" font-size="9" fill="#3cffd0" text-anchor="middle">PADS · CHORDS</text>
+      <rect x="650" y="70" width="110" height="22" rx="2" fill="#181818" stroke="#3cffd0" stroke-width="1"/>
+      <text x="705" y="85" font-family="'Space Mono',monospace" font-size="9" fill="#3cffd0" text-anchor="middle">PADS · CHORDS</text>
+      <rect x="50" y="110" width="90" height="22" rx="2" fill="#181818" stroke="#c084fc" stroke-width="1"/>
+      <text x="95" y="125" font-family="'Space Mono',monospace" font-size="9" fill="#c084fc" text-anchor="middle">REVERB / FX</text>
+      <rect x="720" y="110" width="90" height="22" rx="2" fill="#181818" stroke="#c084fc" stroke-width="1"/>
+      <text x="765" y="125" font-family="'Space Mono',monospace" font-size="9" fill="#c084fc" text-anchor="middle">REVERB / FX</text>
+      <text x="430" y="158" font-family="'DM Sans',sans-serif" font-size="10" fill="#444" text-anchor="middle">← elements spread wider as they support, not lead — low end always stays center →</text>
+    </svg>
+  </div>
+
+</div>
