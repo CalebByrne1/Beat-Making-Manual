@@ -51,6 +51,11 @@ function initContent() {
   navLinks.forEach(link => {
     link.addEventListener('click', () => { closeSidebar(); });
   });
+
+  // Collapsible tips — click to toggle between expanded and condensed
+  document.querySelectorAll('.tip').forEach(tip => {
+    tip.addEventListener('click', () => tip.classList.toggle('collapsed'));
+  });
 }
 
 async function loadContent() {
