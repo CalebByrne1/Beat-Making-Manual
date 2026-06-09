@@ -65,7 +65,10 @@ function initContent() {
 
   // Collapsible tips — click to toggle between expanded and condensed
   document.querySelectorAll('.tip').forEach(tip => {
-    tip.addEventListener('click', () => tip.classList.toggle('collapsed'));
+    tip.addEventListener('click', (e) => {
+      if (e.target.closest('a')) return;
+      tip.classList.toggle('collapsed');
+    });
   });
 }
 

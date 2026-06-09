@@ -20,7 +20,7 @@
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
     background: var(--bg);
@@ -413,7 +413,8 @@
 .tip.collapsed .tip-icon { transform: rotate(0deg); }
 
 .tip-text {
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 400;
   color: var(--muted);
   line-height: 1.7;
 }
@@ -426,8 +427,10 @@
   opacity: 0.55;
 }
 
-.tip-text strong { color: var(--text); font-weight: 500; }
+.tip-text strong { color: var(--text); font-weight: 600; }
 .tip-text em { color: var(--text); font-style: italic; }
+.tip-text a { color: var(--accent); text-decoration: none; }
+.tip-text a:hover { text-decoration: underline; }
 .tip-text code {
   font-family: var(--mono);
   font-size: 10px;
@@ -629,5 +632,5 @@
   .chain-node { font-size: 9px; padding: 4px 7px; }
   .ratio-use { display: none; }
   .scale-notes { font-size: 9px; }
-  .tip-text { font-size: 12px; }
+  .tip-text { font-size: 13px; }
 }
