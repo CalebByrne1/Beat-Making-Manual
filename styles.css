@@ -578,14 +578,23 @@
   border-radius: 2px;
 }
 
-.step-cell.hit {
-  background: var(--accent);
-  border-color: var(--accent);
-}
-
 .step-cell.beat-start {
   border-left: 2px solid var(--muted);
 }
+
+/* Alternate shading per 4-step beat group (beats 2 & 4) so the bar reads in groups of 4 */
+.step-cell:nth-child(8n+5):not(.hit),
+.step-cell:nth-child(8n+6):not(.hit),
+.step-cell:nth-child(8n+7):not(.hit),
+.step-cell:nth-child(8n+8):not(.hit) {
+  background: var(--surface);
+}
+
+/* Hits are colored per instrument so the same color always means the same drum across every card */
+.step-cells.kick  .step-cell.hit { background: var(--accent);  border-color: var(--accent); }
+.step-cells.snare .step-cell.hit,
+.step-cells.clap  .step-cell.hit { background: var(--accent2); border-color: var(--accent2); }
+.step-cells.hihat .step-cell.hit { background: var(--accent3); border-color: var(--accent3); }
 
 /* ══════════════════════════════════════════
    NOTES / CALLOUTS
