@@ -20,9 +20,15 @@ Then open <http://localhost:8000>. Any static server works (`npx serve`, VS Code
 | File | Purpose |
 | --- | --- |
 | `index.html` | Page shell, sidebar navigation, header, footer |
-| `script.js` | Loads chapters, sidebar search, scrollspy, collapsible tips |
+| `script.js` | Loads chapters, builds the search index, scrollspy, collapsible tips |
 | `styles.css` | All styling, including print/PDF styles |
 | `sections/*.html` | The chapters themselves, loaded in the order listed in `script.js` |
+
+Chapters load in this order: `start-here` → `production` → `arrangement` → `mixing` → `vocals` → `exporting` → `theory` → `plugins` → `reference`.
+
+### Search
+
+The sidebar search matches section titles **and** the full text of every tip, so a term like "sidechain" surfaces each section that discusses it, with a badge showing how many tips matched. The index is built from the DOM in `buildSearchIndex()` once the chapters have loaded — no build step and nothing to keep in sync when you add content.
 
 ### Adding a section
 

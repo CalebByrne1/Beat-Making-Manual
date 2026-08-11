@@ -17,27 +17,91 @@ function openSidebar() {
 function closeSidebar() {
   document.getElementById('sidebar').classList.remove('open');
 }
+/* ── SEARCH ──
+   The sidebar search matches section titles AND the text of every tip inside
+   each section, so a term like "sidechain" or "-14 LUFS" finds the sections
+   that actually discuss it rather than only the ones with it in the heading.
+   The index is built once, after the chapters load. */
+let searchIndex = null;
+
+function buildSearchIndex() {
+  const index = new Map();
+  document.querySelectorAll('.section-anchor').forEach(anchor => {
+    const blocks = [];
+    const tips = [];
+    // Walk forward from the anchor collecting everything until the next section starts.
+    for (let el = anchor.nextElementSibling; el; el = el.nextElementSibling) {
+      if (el.classList && el.classList.contains('section-anchor')) break;
+      blocks.push(el.textContent);
+      el.querySelectorAll('.tip-text').forEach(t => tips.push(t.textContent.toLowerCase()));
+    }
+    index.set(anchor.id, {
+      text: blocks.join(' ').toLowerCase().replace(/\s+/g, ' '),
+      tips: tips
+    });
+  });
+  searchIndex = index;
+}
+
+function setNavCount(link, n) {
+  let badge = link.querySelector('.nav-count');
+  if (n === null) {
+    if (badge) badge.remove();
+    return;
+  }
+  if (!badge) {
+    badge = document.createElement('span');
+    badge.className = 'nav-count';
+    link.appendChild(badge);
+  }
+  badge.textContent = n;
+}
+
 function filterNav(query) {
   const q = query.toLowerCase().trim();
   const links = document.querySelectorAll('.nav-link');
   const groups = document.querySelectorAll('.nav-group');
+  const empty = document.getElementById('nav-empty');
+
   if (!q) {
-    links.forEach(l => l.classList.remove('search-hidden'));
+    links.forEach(l => { l.classList.remove('search-hidden'); setNavCount(l, null); });
     groups.forEach(g => { g.style.display = ''; g.classList.remove('collapsed'); });
+    if (empty) empty.style.display = 'none';
     return;
   }
+
+  let anyResults = false;
   groups.forEach(group => {
-    const groupLinks = group.querySelectorAll('.nav-link');
     let anyVisible = false;
-    groupLinks.forEach(link => {
-      const matches = link.textContent.toLowerCase().includes(q);
+    group.querySelectorAll('.nav-link').forEach(link => {
+      const id = (link.getAttribute('href') || '').slice(1);
+      const entry = searchIndex && searchIndex.get(id);
+
+      const titleMatch = link.textContent.toLowerCase().includes(q);
+      const tipHits = entry ? entry.tips.filter(t => t.includes(q)).length : 0;
+      const bodyMatch = entry ? entry.text.includes(q) : false;
+      const matches = titleMatch || bodyMatch;
+
       link.classList.toggle('search-hidden', !matches);
-      if (matches) anyVisible = true;
+      // Show how many tips inside the section mention the term.
+      setNavCount(link, matches && tipHits > 0 ? tipHits : null);
+      if (matches) { anyVisible = true; anyResults = true; }
     });
     group.style.display = anyVisible ? '' : 'none';
     if (anyVisible) group.classList.remove('collapsed');
   });
+
+  if (empty) empty.style.display = anyResults ? 'none' : 'block';
 }
+
+// Escape clears the search box.
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Escape') return;
+  const box = document.getElementById('nav-search');
+  if (!box || document.activeElement !== box || !box.value) return;
+  box.value = '';
+  filterNav('');
+});
 
 let allTipsCollapsed = false;
 
@@ -56,6 +120,11 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 function initContent() {
+  buildSearchIndex();
+  // If someone typed while the chapters were still loading, re-run with the index.
+  const box = document.getElementById('nav-search');
+  if (box && box.value.trim()) filterNav(box.value);
+
   const anchors = document.querySelectorAll('.section-anchor');
   const navLinks = document.querySelectorAll('.nav-link');
   const observer = new IntersectionObserver((entries) => {
@@ -98,6 +167,8 @@ async function loadContent() {
     'sections/production.html',
     'sections/arrangement.html',
     'sections/mixing.html',
+    'sections/vocals.html',
+    'sections/exporting.html',
     'sections/theory.html',
     'sections/plugins.html',
     'sections/reference.html',

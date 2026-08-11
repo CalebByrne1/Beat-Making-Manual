@@ -24,7 +24,8 @@
     <button id="nav-close" onclick="closeSidebar()" title="Close menu" aria-label="Close navigation menu">✕</button>
   </div>
   <div class="nav-search-wrap">
-    <input type="search" id="nav-search" placeholder="Search sections..." aria-label="Search sections" oninput="filterNav(this.value)" autocomplete="off">
+    <input type="search" id="nav-search" placeholder="Search the manual..." aria-label="Search the manual" oninput="filterNav(this.value)" autocomplete="off">
+    <div id="nav-empty">No matches.</div>
   </div>
 
   <div class="nav-group">
@@ -79,6 +80,28 @@
     <a class="nav-link" href="#mastering"><span class="nav-dot dot-yellow"></span>Mastering</a>
     <a class="nav-link" href="#signal-chain"><span class="nav-dot dot-teal"></span>Signal Chain Reference</a>
     <a class="nav-link" href="#diagrams"><span class="nav-dot dot-purple"></span>Signal Chain Diagrams</a>
+  </div></div>
+
+  <div class="nav-group">
+    <div class="nav-group-toggle" role="button" tabindex="0" aria-expanded="true" onclick="toggleGroup(this)">
+      <span class="nav-group-label">Vocals</span>
+      <span class="nav-chevron">▼</span>
+    </div>
+    <div class="nav-group-links"><a class="nav-link" href="#vocal-recording"><span class="nav-dot dot-yellow"></span>Recording Vocals</a>
+    <a class="nav-link" href="#vocal-chain"><span class="nav-dot dot-teal"></span>The Vocal Chain</a>
+    <a class="nav-link" href="#vocal-tuning"><span class="nav-dot dot-orange"></span>Tuning & Timing</a>
+    <a class="nav-link" href="#vocal-layers"><span class="nav-dot dot-purple"></span>Doubles, Ad-Libs & Stacks</a>
+    <a class="nav-link" href="#vocal-effects"><span class="nav-dot dot-yellow"></span>Vocal Reverb & Delay</a>
+  </div></div>
+
+  <div class="nav-group">
+    <div class="nav-group-toggle" role="button" tabindex="0" aria-expanded="true" onclick="toggleGroup(this)">
+      <span class="nav-group-label">Finishing & Delivery</span>
+      <span class="nav-chevron">▼</span>
+    </div>
+    <div class="nav-group-links"><a class="nav-link" href="#exporting"><span class="nav-dot dot-teal"></span>Exporting Your Beat</a>
+    <a class="nav-link" href="#stems"><span class="nav-dot dot-orange"></span>Stems & Track-Outs</a>
+    <a class="nav-link" href="#delivery"><span class="nav-dot dot-purple"></span>Delivering to Artists & Engineers</a>
   </div></div>
 
   <div class="nav-group">
