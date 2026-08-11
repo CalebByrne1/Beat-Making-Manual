@@ -230,7 +230,6 @@
     #main { margin-left: 0; width: 100%; padding: 24px 16px 100px; }
     #nav-toggle { display: block; }
     #nav-close { display: flex; }
-    .section-anchor { top: -60px; }
   }
 
   footer {
@@ -316,6 +315,8 @@
   height: 0;
   visibility: hidden;
   pointer-events: none;
+  /* Keeps the section label off the very top edge when jumping from the sidebar */
+  scroll-margin-top: 16px;
 }
 
 .section-label {
@@ -692,4 +693,47 @@
   .tip-text { font-size: 13px; }
   .step-row-label { width: 36px; font-size: 9px; }
   .step-cells { gap: 2px; }
+}
+
+/* ══════════════════════════════════════════
+   ACCESSIBILITY
+══════════════════════════════════════════ */
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition-duration: 0.01ms !important; }
+}
+
+/* ══════════════════════════════════════════
+   PRINT / SAVE AS PDF
+══════════════════════════════════════════ */
+
+@media print {
+  #sidebar, #sidebar-backdrop, #nav-toggle, #back-to-top, #tips-toggle { display: none !important; }
+
+  body { display: block; background: #fff; color: #111; font-size: 11pt; }
+  #main { margin-left: 0; width: 100%; padding: 0; }
+
+  /* Every tip prints in full, whatever was collapsed on screen */
+  .tip.collapsed .tip-text {
+    overflow: visible;
+    white-space: normal;
+    text-overflow: clip;
+    opacity: 1;
+  }
+
+  .grid { display: block; }
+  .card, .note, .scale-card { break-inside: avoid; border-color: #bbb; background: #fff; }
+  .card { margin-bottom: 12px; }
+  .section-label { break-after: avoid; color: #111; border-bottom-color: #111; padding-top: 24px; }
+  .card h2, .tip-text strong, .header h1, .header h1 span { color: #111; }
+  .tip-text, .card-label, .note { color: #333; }
+
+  /* Print the destination of every outbound link */
+  .tip-text a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #555; }
 }

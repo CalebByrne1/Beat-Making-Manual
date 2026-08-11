@@ -1,6 +1,16 @@
 function toggleGroup(el) {
-  el.parentElement.classList.toggle('collapsed');
+  const collapsed = el.parentElement.classList.toggle('collapsed');
+  el.setAttribute('aria-expanded', String(!collapsed));
 }
+
+// Keyboard support for the nav group headers (they are divs, not buttons)
+document.addEventListener('keydown', (e) => {
+  if (e.key !== 'Enter' && e.key !== ' ') return;
+  const toggle = e.target && e.target.closest && e.target.closest('.nav-group-toggle');
+  if (!toggle) return;
+  e.preventDefault();
+  toggleGroup(toggle);
+});
 function openSidebar() {
   document.getElementById('sidebar').classList.add('open');
 }
@@ -67,9 +77,19 @@ function initContent() {
   document.querySelectorAll('.tip').forEach(tip => {
     tip.addEventListener('click', (e) => {
       if (e.target.closest('a')) return;
+      // Don't collapse the tip the user is trying to select text in
+      const selection = window.getSelection();
+      if (selection && !selection.isCollapsed) return;
       tip.classList.toggle('collapsed');
     });
   });
+}
+
+function showLoadError(message) {
+  const box = document.getElementById('load-error');
+  if (!box) return;
+  box.textContent = '⚠ ' + message;
+  box.style.display = 'block';
 }
 
 async function loadContent() {
@@ -84,13 +104,36 @@ async function loadContent() {
   ];
   const main = document.getElementById('main');
   const footer = main.querySelector('footer');
-  for (const path of sections) {
-    const res = await fetch(path);
-    const html = await res.text();
+
+  // Fetch in parallel, then insert in order so the manual always reads top to bottom.
+  const results = await Promise.all(sections.map(async (path) => {
+    try {
+      const res = await fetch(path);
+      if (!res.ok) throw new Error(res.status + ' ' + res.statusText);
+      return { path, html: await res.text() };
+    } catch (err) {
+      console.error('Could not load ' + path, err);
+      return { path, html: null };
+    }
+  }));
+
+  const failed = [];
+  for (const { path, html } of results) {
+    if (html === null) { failed.push(path); continue; }
     const wrapper = document.createElement('div');
     wrapper.innerHTML = html;
     main.insertBefore(wrapper, footer);
   }
+
+  // A file:// page can't fetch its own chapters — that failure needs its own explanation.
+  if (failed.length === sections.length) {
+    showLoadError(location.protocol === 'file:'
+      ? 'This page has to be served over http:// — opening index.html straight from disk blocks it from loading its own chapters. Run a local server (for example: python -m http.server) and open the address it prints.'
+      : 'None of the chapters could be loaded. Check that the sections/ folder is present alongside index.html.');
+  } else if (failed.length) {
+    showLoadError('Some chapters could not be loaded: ' + failed.join(', '));
+  }
+
   initContent();
 }
 

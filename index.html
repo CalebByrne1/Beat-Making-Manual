@@ -8,6 +8,9 @@
 <meta property="og:title" content="The Beat Making Manual — Byrne Beats">
 <meta property="og:description" content="A free beat-making reference for FL Studio producers. Drums, 808s, mixing, theory, arrangement, and more. Built from real sessions, not textbooks.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="byrne-beats-64.png">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0a0a0a">
 <link rel="icon" type="image/png" href="byrne-beats-64.png">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -18,14 +21,14 @@
 ═══════════════════════════════════════ -->
 <nav id="sidebar">
   <div class="nav-header">THE BEAT MAKING MANUAL<span>by Byrne Beats</span>
-    <button id="nav-close" onclick="closeSidebar()" title="Close menu">✕</button>
+    <button id="nav-close" onclick="closeSidebar()" title="Close menu" aria-label="Close navigation menu">✕</button>
   </div>
   <div class="nav-search-wrap">
-    <input type="text" id="nav-search" placeholder="Search sections..." oninput="filterNav(this.value)" autocomplete="off">
+    <input type="search" id="nav-search" placeholder="Search sections..." aria-label="Search sections" oninput="filterNav(this.value)" autocomplete="off">
   </div>
 
   <div class="nav-group">
-    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+    <div class="nav-group-toggle" role="button" tabindex="0" aria-expanded="true" onclick="toggleGroup(this)">
       <span class="nav-group-label">Start Here</span>
       <span class="nav-chevron">▼</span>
     </div>
@@ -33,11 +36,11 @@
     <a class="nav-link" href="#foundations"><span class="nav-dot dot-yellow"></span>Foundations</a>
     <a class="nav-link" href="#fl-basics"><span class="nav-dot dot-orange"></span>FL Studio Basics</a>
     <a class="nav-link" href="#mix-levels"><span class="nav-dot dot-teal"></span>Mix Level Reference</a>
-    <a class="nav-link" href="#fl-tips"><span class="nav-dot dot-purple"></span>FL Tips & Tricks</a>
+    <a class="nav-link" href="#fl-tips"><span class="nav-dot dot-purple"></span>FL Studio Tips & Tricks</a>
   </div></div>
 
   <div class="nav-group">
-    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+    <div class="nav-group-toggle" role="button" tabindex="0" aria-expanded="true" onclick="toggleGroup(this)">
       <span class="nav-group-label">Production</span>
       <span class="nav-chevron">▼</span>
     </div>
@@ -54,7 +57,7 @@
   </div></div>
 
   <div class="nav-group">
-    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+    <div class="nav-group-toggle" role="button" tabindex="0" aria-expanded="true" onclick="toggleGroup(this)">
       <span class="nav-group-label">Arrangement</span>
       <span class="nav-chevron">▼</span>
     </div>
@@ -66,7 +69,7 @@
   </div></div>
 
   <div class="nav-group">
-    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+    <div class="nav-group-toggle" role="button" tabindex="0" aria-expanded="true" onclick="toggleGroup(this)">
       <span class="nav-group-label">Mixing</span>
       <span class="nav-chevron">▼</span>
     </div>
@@ -79,30 +82,30 @@
   </div></div>
 
   <div class="nav-group">
-    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+    <div class="nav-group-toggle" role="button" tabindex="0" aria-expanded="true" onclick="toggleGroup(this)">
       <span class="nav-group-label">Theory & Creativity</span>
       <span class="nav-chevron">▼</span>
     </div>
-    <div class="nav-group-links"><a class="nav-link" href="#music-theory"><span class="nav-dot dot-orange"></span>Music Theory</a>
-    <a class="nav-link" href="#scales"><span class="nav-dot dot-yellow"></span>Scales & Emotions</a>
+    <div class="nav-group-links"><a class="nav-link" href="#scales"><span class="nav-dot dot-yellow"></span>Scales & Emotions</a>
+    <a class="nav-link" href="#music-theory"><span class="nav-dot dot-orange"></span>Music Theory</a>
     <a class="nav-link" href="#synth"><span class="nav-dot dot-purple"></span>Synth & Sound Design</a>
-    <a class="nav-link" href="#experimental"><span class="nav-dot dot-teal"></span>Experimental</a>
+    <a class="nav-link" href="#experimental"><span class="nav-dot dot-teal"></span>Experimental & Try This</a>
     <a class="nav-link" href="#ear-training"><span class="nav-dot dot-yellow"></span>Ear Training</a>
     <a class="nav-link" href="#workflow"><span class="nav-dot dot-orange"></span>Workflow & Mindset</a>
   </div></div>
 
   <div class="nav-group">
-    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+    <div class="nav-group-toggle" role="button" tabindex="0" aria-expanded="true" onclick="toggleGroup(this)">
       <span class="nav-group-label">Plugins & Tools</span>
       <span class="nav-chevron">▼</span>
     </div>
     <div class="nav-group-links"><a class="nav-link" href="#free-plugins"><span class="nav-dot dot-yellow"></span>Free Plugins Worth Using</a>
     <a class="nav-link" href="#free-synths"><span class="nav-dot dot-teal"></span>Free Synths Worth Using</a>
-    <a class="nav-link" href="#upgrade-path"><span class="nav-dot dot-purple"></span>Upgrade Path — Free to Paid</a>
+    <a class="nav-link" href="#upgrade-path"><span class="nav-dot dot-purple"></span>Upgrade Path: Free to Paid</a>
   </div></div>
 
   <div class="nav-group">
-    <div class="nav-group-toggle" onclick="toggleGroup(this)">
+    <div class="nav-group-toggle" role="button" tabindex="0" aria-expanded="true" onclick="toggleGroup(this)">
       <span class="nav-group-label">Reference</span>
       <span class="nav-chevron">▼</span>
     </div>
@@ -116,7 +119,7 @@
 
 <div id="sidebar-backdrop" onclick="closeSidebar()"></div>
 <button id="nav-toggle" onclick="openSidebar()" aria-label="Open navigation menu">☰ MENU</button>
-<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top">↑ TOP</button>
+<button id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Back to top" aria-label="Back to top">↑ TOP</button>
 
 <!-- ═══════════════════════════════════════
      MAIN CONTENT
@@ -136,10 +139,17 @@
   </div>
 </div>
 
+<noscript>
+  <div class="note yellow-note" style="margin-top:32px;">⚠ This manual loads its chapters with JavaScript. Enable JavaScript to read it, or browse the raw chapters directly in the <code>sections/</code> folder.</div>
+</noscript>
+
+<!-- Shown only if a chapter fails to load (see script.js) -->
+<div id="load-error" class="note yellow-note" style="display:none;margin-top:32px;"></div>
+
 <footer>
   <div>
     <div style="margin-bottom:5px;">THE BEAT MAKING MANUAL — <span style="color:var(--accent);">BYRNE BEATS</span></div>
-    <div style="opacity:0.45;font-size:10px;letter-spacing:1px;">Last updated June 2026 · Free for everyone</div>
+    <div style="opacity:0.45;font-size:10px;letter-spacing:1px;">Last updated August 2026 · Free for everyone</div>
   </div>
   <div class="footer-links">
     <a href="https://www.youtube.com/@byrnebeatswastaken" target="_blank" rel="noopener noreferrer">YouTube →</a>
@@ -152,3 +162,4 @@
 <script src="script.js"></script>
 
 </body>
+</html>
