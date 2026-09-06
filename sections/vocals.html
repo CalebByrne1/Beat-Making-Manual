@@ -11,7 +11,7 @@
   <div class="card yellow">
     <div class="card-label">The Chain</div>
     <h2>WHAT YOU ACTUALLY NEED</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>The signal path.</strong> Microphone → XLR cable → audio interface → USB → FL Studio. That's the whole thing. A USB microphone collapses the interface into the mic and works fine to start, but it limits you to one mic and one input.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>The signal path.</strong> Microphone → XLR cable → audio interface → USB → FL Studio. That's the whole thing. A USB microphone collapses the interface into the mic and works fine to start, but it limits you to one mic and one input.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Condenser vs dynamic.</strong> Condensers are more sensitive and detailed — and they pick up your room, your fan, and the street. Dynamics are less detailed but reject far more of what's around them. <strong>In an untreated bedroom, a dynamic mic often gets a better usable take than a more expensive condenser</strong>, because it isn't recording the walls.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Interface preamp gain matters.</strong> Vocals typically need 55–65dB of clean gain. Very cheap interfaces get audibly hissy above about 55–60dB, which is where "why is my vocal noisy" usually comes from — not the mic.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Pop filter, always.</strong> A few dollars. It stops the blast of air from "p" and "b" sounds hitting the capsule and creating a low-frequency thump that no EQ fully repairs. Place it a few inches from the mic, not against it.</div></div>
@@ -22,7 +22,7 @@
   <div class="card teal">
     <div class="card-label">FL Studio</div>
     <h2>SETTING UP TO RECORD IN FL</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Use an ASIO driver.</strong> Options → Audio Settings → Device. Pick your interface's own ASIO driver if it has one, or ASIO4ALL. This is what makes low-latency recording possible on Windows — the default drivers will feel unusably delayed.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Use an ASIO driver.</strong> Options → Audio Settings → Device. Pick your interface's own ASIO driver if it has one, or ASIO4ALL. This is what makes low-latency recording possible on Windows — the default drivers will feel unusably delayed.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>FL records into mixer tracks, not the Channel Rack.</strong> Press <code>F9</code>, click an empty mixer insert, and name it "Vocals". This is the step people miss coming from other DAWs.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Set the input.</strong> With the vocal insert selected, choose your interface input from the <strong>IN</strong> menu at the top of the mixer strip. Then click the small record-arm dot on that insert. You should see the meter move when you talk.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Buffer size: small to record, large to mix.</strong> 128–256 samples while tracking keeps latency low enough to perform against. Push it to 512–1024 when you're mixing so plugins have CPU to breathe. Crackling and dropouts mean the buffer is too small.</div></div>
@@ -33,7 +33,7 @@
   <div class="card orange">
     <div class="card-label">Levels</div>
     <h2>GETTING A CLEAN TAKE</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Record at 24-bit.</strong> Set it in Audio Settings and forget it. 24-bit gives you a noise floor so far below anything audible that recording conservatively costs you nothing.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Record at 24-bit.</strong> Set it in Audio Settings and forget it. 24-bit gives you a noise floor so far below anything audible that recording conservatively costs you nothing.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Target roughly <code>-18dBFS</code> average with peaks no higher than <code>-6dBFS</code>.</strong> Have the artist perform their <em>loudest</em> line and set gain so that lands near -6. Everything quieter then takes care of itself and you keep a safety margin for the ad-lib that comes out twice as loud as rehearsal.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Chasing "hot" levels is a habit from tape.</strong> There is no reward for recording close to 0dBFS on a modern 24-bit system, only the risk of clipping — and a clipped take cannot be repaired. Aim low and turn it up later.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Record dry.</strong> No compression, no EQ, no autotune printed into the file. Every one of those is a permanent, irreversible decision made before you know what the mix needs. Put them on the mixer insert to <em>monitor</em> through if it helps the performance, but keep the recorded file clean.</div></div>
@@ -45,7 +45,7 @@
   <div class="card white">
     <div class="card-label">Acoustics</div>
     <h2>THE ROOM IS THE HARD PART</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>You're recording the room whether you like it or not.</strong> A vocal that sounds boxy, hollow, or like it was recorded in a bathroom is almost always a room problem. Room reflections baked into a take cannot be removed afterwards — no plugin undoes them.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>You're recording the room whether you like it or not.</strong> A vocal that sounds boxy, hollow, or like it was recorded in a bathroom is almost always a room problem. Room reflections baked into a take cannot be removed afterwards — no plugin undoes them.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>The clothes-closet trick.</strong> A closet full of hanging clothes is one of the best-sounding untreated spaces most people have access to. Soft, dense, irregular surfaces on all sides absorb reflections. It genuinely works, and it costs nothing.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Otherwise: soft things behind and around the mic.</strong> A duvet on a clothes rail, a mattress on its side, blankets over a corner. You're trying to stop sound bouncing straight back into the capsule. Aim for absorption <em>behind the singer</em> as well as behind the mic.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Avoid the middle of a square room</strong> and avoid singing directly at a bare parallel wall. Corners and dead centre are the worst spots. Try a few positions and listen back — the difference between the best and worst spot in an ordinary room is dramatic.</div></div>
@@ -73,7 +73,7 @@
     </div>
     <div class="two-col">
       <div>
-        <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Clip gain first.</strong> Before any plugin, even out the wildest level jumps by hand — turn down the shouted line, turn up the mumbled one. Every plugin downstream then gets a more consistent signal, and your compressor doesn't have to do violence to fix one loud word.</div></div>
+        <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Clip gain first.</strong> Before any plugin, even out the wildest level jumps by hand — turn down the shouted line, turn up the mumbled one. Every plugin downstream then gets a more consistent signal, and your compressor doesn't have to do violence to fix one loud word.</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Cleanup EQ before the compressor.</strong> Subtractive only — high-pass, and cut any obvious mud or resonance. The point is that the compressor should react to the <em>voice</em>, not to low-frequency rumble. A compressor fed 60Hz plosive energy ducks the whole vocal every time the singer says "p".</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Compressor next.</strong> Now the dynamics get controlled on a clean signal. This is the stage that makes a vocal sit <em>in</em> the beat rather than floating on top of it.</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>De-esser after the compressor.</strong> Compression with make-up gain raises everything — including sibilance. De-essing after it means you're taming the "s" sounds at the level they'll actually be heard at. (Some engineers add a second, gentle de-esser <em>before</em> the compressor when a vocal is severely sibilant, so the compressor isn't triggered by the "s" itself. Two light de-essers beat one aggressive one.)</div></div>
@@ -90,7 +90,7 @@
   <div class="card teal">
     <div class="card-label">EQ</div>
     <h2>VOCAL EQ MOVES THAT WORK</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>High-pass at 80–100Hz.</strong> There is essentially no useful vocal content below this, and plenty of rumble, plosive thump and desk noise. Sweep upward until the vocal starts sounding thin, then back off slightly. On a deep male voice you may stop around 70Hz; on a bright female voice you can often go to 120Hz.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>High-pass at 80–100Hz.</strong> There is essentially no useful vocal content below this, and plenty of rumble, plosive thump and desk noise. Sweep upward until the vocal starts sounding thin, then back off slightly. On a deep male voice you may stop around 70Hz; on a bright female voice you can often go to 120Hz.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>200–400Hz — mud.</strong> The most common problem area. A wide, gentle cut of 2–3dB here is what separates a vocal from a beat that's already full in the low mids. Cut too much and the voice loses its body.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>400–800Hz — boxiness.</strong> That "cardboard" or "recorded in a small room" quality. Usually a narrower cut, and usually a symptom of the room rather than the voice.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>3–5kHz — presence and intelligibility.</strong> Where consonants live. A gentle wide boost pushes the vocal forward and makes words clearer. Overdo it and it becomes fatiguing and harsh very quickly.</div></div>
@@ -108,7 +108,7 @@
       <div class="value-chip hi">Release 40–100ms</div>
     </div>
     <div class="tip" style="margin-top:12px"><div class="tip-icon">▸</div><div class="tip-text"><strong>Rap vocals need more control than sung vocals.</strong> The delivery is dense, fast and percussive, and it has to stay consistently on top of a loud beat. Ratios around 3:1 to 4:1 are a normal starting point, going higher for aggressive deliveries.</div></div>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Fast attack, 1–5ms.</strong> Unlike drums, you generally <em>don't</em> want to let the transient through — you want the compressor catching the front of each word so the vocal stays even and forward. A slower attack leaves consonants poking out.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Fast attack, 1–5ms.</strong> Unlike drums, you generally <em>don't</em> want to let the transient through — you want the compressor catching the front of each word so the vocal stays even and forward. A slower attack leaves consonants poking out.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Release around 40–100ms.</strong> Fast enough that the compressor recovers between words, slow enough that it isn't audibly pumping on every syllable. If you can hear the beat "breathing" behind the vocal, slow it down.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Aim for 3–6dB of gain reduction on the loudest lines.</strong> If the meter is pinned at 10dB+ constantly, your clip gain work upstream wasn't done — go back and fix the levels by hand first.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Two gentle compressors beat one aggressive one.</strong> This is the single most useful vocal technique here. Compressor one: fast attack, high ratio, catching only the loudest peaks, 2–3dB of reduction. Compressor two: slower, lower ratio, 2–3dB, levelling the overall performance. The result is far more transparent and controlled than 8dB from a single unit.</div></div>
@@ -118,7 +118,7 @@
   <div class="card white">
     <div class="card-label">Sibilance</div>
     <h2>DE-ESSING</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>What sibilance is.</strong> The harsh, piercing energy in "s", "sh", "t" and "ch" sounds. It's exaggerated by close-miking, by compression, and by every high-frequency boost you add — which is why vocals that felt fine raw become painful once processed.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>What sibilance is.</strong> The harsh, piercing energy in "s", "sh", "t" and "ch" sounds. It's exaggerated by close-miking, by compression, and by every high-frequency boost you add — which is why vocals that felt fine raw become painful once processed.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Where it lives: 5–9kHz</strong>, sometimes extending to 11kHz. Deeper voices tend to sit lower, around 5–6kHz; brighter voices around 7–8kHz. Find it by soloing the de-esser's detection band and sweeping until the "s" sounds jump out.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>How much: 3–6dB of reduction</strong> on the sibilant peaks is usually plenty. Push to 10dB only if the recording is genuinely severe. Over-de-essing gives the singer a lisp, which is far more noticeable than the sibilance you were fixing.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Use split-band mode if you have it.</strong> That way only the high frequencies duck when an "s" hits, instead of the entire vocal dipping in level. Full-band de-essing makes the voice pump.</div></div>
@@ -130,7 +130,7 @@
   <div class="card purple">
     <div class="card-label">Character</div>
     <h2>SATURATION &amp; THE LAST 10%</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Saturation makes a vocal feel present without making it louder.</strong> The added harmonics give the voice more to grab onto in the midrange, which reads as "closer" and "more expensive." Subtle is the whole game — if you can hear it as an effect, it's too much.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Saturation makes a vocal feel present without making it louder.</strong> The added harmonics give the voice more to grab onto in the midrange, which reads as "closer" and "more expensive." Subtle is the whole game — if you can hear it as an effect, it's too much.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Parallel it if you're nervous.</strong> Send the vocal to a heavily saturated duplicate and blend it in underneath the clean one. You get the density without losing the clarity of the original.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>A vocal that still won't sit is usually a beat problem.</strong> Before adding another plugin to the voice, try pulling the beat down 1dB, or dipping the melodic bus where the vocal lives. Nine times out of ten that's the actual fix.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Reference at low volume.</strong> If you can still understand every word with the mix barely audible, the vocal is sitting correctly. If it disappears, it's too quiet or masked regardless of what the meters say.</div></div>
@@ -149,37 +149,44 @@
     <div class="card-label">Reference</div>
     <h2>VOCAL BANDS — TOO LITTLE, RIGHT, TOO MUCH</h2>
     <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Every band gives the vocal something and takes something away. Knowing the word for what you're hearing is most of the diagnosis — read across from the symptom to find the band.</p>
-    <div style="font-family:var(--mono);font-size:11px;margin-top:4px;overflow-x:auto;">
-      <div style="display:grid;grid-template-columns:130px 1fr 1fr 1fr;gap:0;min-width:540px;">
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--accent);">Range</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--accent);">Too little</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--accent);">Just right</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--accent);">Too much</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">&lt; 250Hz</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Thin</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Body</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Blurry</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">250Hz–500Hz</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Lacks power</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Warmth</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Muddy</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">500Hz–3kHz</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Masked</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Clarity</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Nasal</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">3kHz–8kHz</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Buried</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Presence</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Harsh</div>
-
-        <div style="padding:7px 10px 7px 0;color:var(--text);">&gt; 8kHz</div>
-        <div style="padding:7px 10px 7px 0;color:var(--muted);">Dark, dull</div>
-        <div style="padding:7px 10px 7px 0;color:var(--muted);">Bright, air</div>
-        <div style="padding:7px 0 7px 10px;color:var(--muted);">Irritating</div>
+    <div class="dtable">
+      <div class="dt-grid" style="grid-template-columns:130px 1fr 1fr 1fr;min-width:540px;">
+        <div class="dt-row dt-h">
+          <div class="dt-k">Range</div>
+          <div class="dt-k">Too little</div>
+          <div class="dt-k">Just right</div>
+          <div class="dt-k">Too much</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">&lt; 250Hz</div>
+          <div class="dt-d">Thin</div>
+          <div class="dt-d">Body</div>
+          <div class="dt-d">Blurry</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">250Hz–500Hz</div>
+          <div class="dt-d">Lacks power</div>
+          <div class="dt-d">Warmth</div>
+          <div class="dt-d">Muddy</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">500Hz–3kHz</div>
+          <div class="dt-d">Masked</div>
+          <div class="dt-d">Clarity</div>
+          <div class="dt-d">Nasal</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">3kHz–8kHz</div>
+          <div class="dt-d">Buried</div>
+          <div class="dt-d">Presence</div>
+          <div class="dt-d">Harsh</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">&gt; 8kHz</div>
+          <div class="dt-d">Dark, dull</div>
+          <div class="dt-d">Bright, air</div>
+          <div class="dt-d">Irritating</div>
+        </div>
       </div>
     </div>
   </div>
@@ -187,7 +194,7 @@
   <div class="card orange">
     <div class="card-label">Low Mids</div>
     <h2>THE 250–500Hz PROBLEM</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>This is the hardest band on any vocal.</strong> Too much energy and it's muddy; too little and the voice sounds weak and small. It's also where background noise and untreated rooms dump most of their damage.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>This is the hardest band on any vocal.</strong> Too much energy and it's muddy; too little and the voice sounds weak and small. It's also where background noise and untreated rooms dump most of their damage.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>A static cut is the wrong tool.</strong> Cut enough to fix the loud moments and you've thinned out every quiet line in the take. Cut gently and the muddy moments stay muddy.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Use a dynamic EQ instead.</strong> Set it to dip 250–500Hz only when the band's level crosses a threshold, and stay out of the way the rest of the time. You keep the warmth and body the band provides, and duck it only when it actually misbehaves.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>The same logic applies anywhere the problem is intermittent.</strong> Harsh highs that only appear on the loud lines, a resonance that only rings on certain words — dynamic EQ handles all of it without flattening the rest of the take.</div></div>
@@ -196,7 +203,7 @@
   <div class="card teal">
     <div class="card-label">Staying On Top</div>
     <h2>MULTIBAND COMPRESSION ON THE MAIN BAND</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>The problem:</strong> a vocal that's compressed fine overall but still slips behind the beat on certain lines.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>The problem:</strong> a vocal that's compressed fine overall but still slips behind the beat on certain lines.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>The band that carries a vocal is roughly <code>800Hz–3.5kHz</code>.</strong> That's the range where a voice cuts through on its own, without help.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Compress only that band</strong> with a multiband compressor. You get consistency exactly where the vocal needs to stay audible, without squashing the full signal to get it.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>This stacks with the main compressor</strong> rather than replacing it. The broadband compressor controls the performance; this one holds the vocal's position in the mix.</div></div>
@@ -205,7 +212,7 @@
   <div class="card purple">
     <div class="card-label">Clearing Space</div>
     <h2>MAKING ROOM WITHOUT TOUCHING THE VOCAL</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Most vocal clarity problems are not vocal problems.</strong> If the chords are sitting on 1–3.5kHz, no amount of boosting the vocal there will win — you'll just get a harsh vocal in a crowded band.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Most vocal clarity problems are not vocal problems.</strong> If the chords are sitting on 1–3.5kHz, no amount of boosting the vocal there will win — you'll just get a harsh vocal in a crowded band.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>M/S EQ on the chords is the cleanest fix.</strong> Cut <code>1–3.5kHz</code> on the MID channel, boost the same band on the SIDES. The chords keep their brightness out wide, the center opens for the vocal, and nothing sounds like it was EQ'd. See <a href="#width">Stereo Width &amp; Mono</a>.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Or sidechain the offender to the vocal.</strong> A compressor on the chords, triggered by the vocal, ducking a dB or two on every phrase. Keep it short and fast so it reads as space rather than pumping.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>The same trick saves the snare.</strong> Chords masking the snare transient? Sidechain the chords to the snare with a very short, fast setting.</div></div>
@@ -214,7 +221,7 @@
   <div class="card yellow wide">
     <div class="card-label">Technique</div>
     <h2>THE GHOST VOCAL SIDECHAIN</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>The problem with ducking effects to the vocal:</strong> the compressor reacts <em>as</em> the word arrives, so the very front of the word — the transient that carries the consonant — gets shaved off along with the reverb you were trying to duck.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>The problem with ducking effects to the vocal:</strong> the compressor reacts <em>as</em> the word arrives, so the very front of the word — the transient that carries the consonant — gets shaved off along with the reverb you were trying to duck.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Duplicate the vocal and mute the copy.</strong> You never hear it. It exists only to trigger the sidechain.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Nudge the ghost copy to start slightly <em>before</em> the real vocal.</strong> Now everything ducking to it turns down just ahead of the word landing.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Two things get fixed at once:</strong> plugin latency stops mattering, and 100% of the vocal transient survives. Use it to duck reverbs, delays, guitars — anything you want out of the way when the vocal speaks.</div></div>
@@ -269,7 +276,7 @@
   <div class="card teal">
     <div class="card-label">Reverb</div>
     <h2>PROCESSING THE REVERB ITSELF</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>A de-esser on the reverb return.</strong> This is the move for bright vocals with a clean high end. Sibilants hitting a reverb produce a sizzling tail that rings on long after the "s" is gone. Put a de-esser <em>after</em> the reverb on the return and it holds those highs down every time a sibilant lands.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>A de-esser on the reverb return.</strong> This is the move for bright vocals with a clean high end. Sibilants hitting a reverb produce a sizzling tail that rings on long after the "s" is gone. Put a de-esser <em>after</em> the reverb on the return and it holds those highs down every time a sibilant lands.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>It may show artifacts soloed. Ignore that.</strong> Judge it in context with the dry vocal, where it just sounds like a reverb that stopped hissing.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Run two reverbs, not one.</strong> A very short one built from early reflections that you can barely hear — that's what makes the vocal read as 3D. Plus a longer one that places it in a space matching the track. One does dimension, the other does size.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Chorus on the reverb return</strong> adds richness and movement to the tail without touching the dry vocal.</div></div>
@@ -279,7 +286,7 @@
   <div class="card white">
     <div class="card-label">Thickening</div>
     <h2>DENSITY WITHOUT A NEW TAKE</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Thin, high vocal:</strong> duplicate it, transpose the copy down <code>12</code> semitones, EQ it and blend it underneath. For a dark low vocal, transpose the copy <em>up</em> 12 instead.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Thin, high vocal:</strong> duplicate it, transpose the copy down <code>12</code> semitones, EQ it and blend it underneath. For a dark low vocal, transpose the copy <em>up</em> 12 instead.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Air, on a parallel copy:</strong> compress it, cut everything below <code>700Hz</code>, boost around <code>12kHz</code>, then de-ess it. Blend under the original. All the sheen, none of the harshness on the main signal.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>To sit on top of a dense mix:</strong> parallel copy with distortion, an EQ boost in the mids and high-mids, and a de-esser to catch what the distortion excites. Blend to taste.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Lo-fi density:</strong> a parallel copy through your favourite lo-fi plugin — noise, wobble, bit reduction — blended low under the clean vocal. Adds weight through imperfection rather than level.</div></div>
@@ -289,7 +296,7 @@
   <div class="card orange">
     <div class="card-label">Stacks</div>
     <h2>A STACK LAYOUT THAT WORKS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Lead centre.</strong> Everything else is built symmetrically around it.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Lead centre.</strong> Everything else is built symmetrically around it.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Unison L and R at roughly <code>±63</code>.</strong> Two separate takes, not one duplicated — the timing differences are the width.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Unison soft L and R at the same positions,</strong> performed quieter. Softer takes fill in around the hard ones without adding level.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Octave up or down, centre.</strong> Adds weight or sparkle right where the lead is, so it reinforces rather than widens.</div></div>
@@ -307,7 +314,7 @@
   <div class="card yellow">
     <div class="card-label">Pitch</div>
     <h2>TUNING VOCALS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Tuning is a creative choice, not a repair job.</strong> In modern rap and pop the tuned sound <em>is</em> the sound — it's a texture, the same way distortion is on a guitar. Deciding how tuned something should be is an aesthetic decision you make deliberately, not a confession that the singer was flat.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Tuning is a creative choice, not a repair job.</strong> In modern rap and pop the tuned sound <em>is</em> the sound — it's a texture, the same way distortion is on a guitar. Deciding how tuned something should be is an aesthetic decision you make deliberately, not a confession that the singer was flat.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Set the key first.</strong> Every tuning plugin needs to know the scale. Tell it the key of your beat — if you don't, it will pull notes to the nearest chromatic pitch and mangle anything expressive. If you're unsure of the key, check <a href="#scales">Scales &amp; Emotions</a>.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Retune speed is the single most important control.</strong> It's how fast the plugin drags a note to the target pitch. Slow (20–40ms) preserves natural slides and vibrato — you hear a corrected human. Fast (0–5ms) snaps instantly between notes, and that snap is the classic hard-tuned trap/T-Pain effect.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Tune before compression, not after.</strong> Pitch correction tracks pitch more reliably on a natural, dynamic signal. Put it first in the chain, or on the clip itself.</div></div>
@@ -318,7 +325,7 @@
   <div class="card teal">
     <div class="card-label">Tools</div>
     <h2>TUNING PLUGINS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Graillon</strong> (Auburn Sounds) — the standard free recommendation. The free edition does transparent correction and hard-tune convincingly, plus formant shifting and a voice-changer section. Genuinely competitive with paid options for real-time correction. Download: <a href="https://www.auburnsounds.com/products/Graillon.html" target="_blank" rel="noopener noreferrer">auburnsounds.com</a></div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Graillon</strong> (Auburn Sounds) — the standard free recommendation. The free edition does transparent correction and hard-tune convincingly, plus formant shifting and a voice-changer section. Genuinely competitive with paid options for real-time correction. Download: <a href="https://www.auburnsounds.com/products/Graillon.html" target="_blank" rel="noopener noreferrer">auburnsounds.com</a></div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>MAutoPitch</strong> (MeldaProduction) — free, part of the MFreeFXBundle you may already have installed from <a href="#free-plugins">Free Plugins Worth Using</a>. Very quick to dial in, clean on subtle correction, and it includes formant shifting and stereo widening.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Newtone</strong> (Image-Line) — bundled with FL Studio from the <strong>Signature Bundle</strong> upward, so Producer Edition owners don't have it. Unlike the real-time plugins, it's a graphical editor: it analyses the audio and lets you drag individual notes, adjust vibrato and fix timing per syllable. Slower, far more precise.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Auto-Tune</strong> (Antares) and <strong>Melodyne</strong> (Celemony) — the paid industry standards. Auto-Tune for real-time and the iconic hard-tune sound; Melodyne for detailed, note-by-note editing. There's no free version of either. Neither is necessary to get a good result.</div></div>
@@ -328,7 +335,7 @@
   <div class="card orange">
     <div class="card-label">Character</div>
     <h2>HARD TUNE VS TRANSPARENT</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>For the hard-tuned effect:</strong> retune speed at or near 0, key and scale set correctly, and — importantly — the artist should sing with <em>sustained, deliberate pitches</em>. The effect comes from the plugin snapping between held notes. A mumbled, slurred delivery gives it nothing to snap between.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>For the hard-tuned effect:</strong> retune speed at or near 0, key and scale set correctly, and — importantly — the artist should sing with <em>sustained, deliberate pitches</em>. The effect comes from the plugin snapping between held notes. A mumbled, slurred delivery gives it nothing to snap between.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Restrict the scale to make it more obvious.</strong> Limiting the plugin to the notes of a pentatonic or minor scale forces bigger jumps between allowed pitches, which exaggerates the effect. A full chromatic scale gives a much subtler result.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>For transparent correction:</strong> retune speed 20–40ms, and only correct what's actually off. The goal is that nobody notices. If you hear the tuning, back the speed off.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Stack both.</strong> A common modern approach: a transparent correction on the lead, and a hard-tuned duplicate underneath at low volume. You get the human performance out front with the tuned texture supporting it.</div></div>
@@ -338,7 +345,7 @@
   <div class="card white">
     <div class="card-label">Timing</div>
     <h2>COMPING &amp; TIMING</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Comping is building one great take from several good ones.</strong> Record three or four full passes, then cut the best line from each into a single track. This is completely standard on virtually every commercial record.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Comping is building one great take from several good ones.</strong> Record three or four full passes, then cut the best line from each into a single track. This is completely standard on virtually every commercial record.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Cut on breaths, not mid-word.</strong> The natural gaps between phrases are where edits become inaudible. A crossfade of a few milliseconds over each join removes any click.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Tighten doubles to the lead, not to the grid.</strong> A double that's 40ms late sounds like a mistake; a double locked to the lead sounds like one thick voice. Nudge the double's syllables until the consonants line up with the lead's.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Don't quantise a vocal to death.</strong> The small timing variations are the performance. Fix what's distractingly out; leave the rest. A perfectly gridded vocal sounds robotic in exactly the way a perfectly gridded hi-hat does — see <a href="#drums">Drums &amp; Sampling</a>.</div></div>
@@ -360,7 +367,7 @@
   <div class="card yellow">
     <div class="card-label">Doubles</div>
     <h2>VOCAL DOUBLES</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>A double is the same line performed again</strong> — not a copy-paste of the lead. The tiny natural differences in timing and pitch between two real performances are exactly what creates thickness. A duplicated audio file just makes the lead louder.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>A double is the same line performed again</strong> — not a copy-paste of the lead. The tiny natural differences in timing and pitch between two real performances are exactly what creates thickness. A duplicated audio file just makes the lead louder.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Sit them 6–10dB below the lead.</strong> You should feel doubles rather than hear them as separate voices. If you can pick the double out as its own performance, it's too loud.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>High-pass them higher than the lead — 150–200Hz.</strong> The lead owns the body of the voice. Doubles only need the mids and top to do their job, and clearing their low end stops three vocals fighting for the same 200Hz.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Compress doubles harder than the lead.</strong> Ratios around 8:1 are normal. You want them consistent and static, locked behind the lead — dynamic doubles wander in and out and draw attention.</div></div>
@@ -371,7 +378,7 @@
   <div class="card teal">
     <div class="card-label">Ad-Libs</div>
     <h2>AD-LIBS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Ad-libs answer the lead.</strong> Short interjections, echoed last words, hype shouts — dropped into the gaps rather than on top of the main line. It's call and response, the same principle as writing a melody in <a href="#melodies">Melodies</a>.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Ad-libs answer the lead.</strong> Short interjections, echoed last words, hype shouts — dropped into the gaps rather than on top of the main line. It's call and response, the same principle as writing a melody in <a href="#melodies">Melodies</a>.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Pan them wide — 40–80%, or hard left and right.</strong> Much wider than doubles. The point is that they occupy space the lead isn't using, so they feel like a different voice in a different place rather than clutter around the main vocal.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Process them differently on purpose.</strong> Ad-libs are where you can be heavy-handed — more reverb, more delay, hard tuning, pitch shifting, telephone EQ, distortion. Making them obviously "treated" is what separates them from the lead.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Fill the gaps, don't cover the words.</strong> Place ad-libs where the lead is resting. An ad-lib over the top of a lyric just makes both unintelligible.</div></div>
@@ -382,7 +389,7 @@
   <div class="card orange">
     <div class="card-label">Stacks &amp; Harmony</div>
     <h2>STACKS &amp; HARMONIES</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>A stack is several takes of the same part layered.</strong> Two is a double; four to eight becomes a wall. Some artists stack a hook five to eight times before adding ad-libs on top. Each layer is a fresh performance.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>A stack is several takes of the same part layered.</strong> Two is a double; four to eight becomes a wall. Some artists stack a hook five to eight times before adding ad-libs on top. Each layer is a fresh performance.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Route the whole stack to one bus.</strong> Send every vocal layer to a single mixer insert and process the group together — one compressor, one reverb send, one fader. Otherwise you're balancing eight tracks every time you want the hook slightly louder. Same principle as the drum bus in <a href="#fl-basics">FL Studio Basics</a>.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Harmonies follow the same rules as melodic harmony.</strong> A 3rd above or below the vocal line, staying in key. Everything in <a href="#harmony">Harmonizing Melodies</a> applies directly — it's the same theory, just sung.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Octave-down layers add weight.</strong> The hook sung an octave lower, tucked well underneath, gives authority without changing the arrangement. Octave-up adds brightness and youth.</div></div>
@@ -393,37 +400,44 @@
     <div class="card-label">Reference</div>
     <h2>WHERE EACH VOCAL LAYER SITS</h2>
     <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px;">Starting points, not rules — same caveat as the <a href="#mix-levels">Mix Level Reference</a>. Levels are relative to the lead vocal.</p>
-    <div style="font-family:var(--mono);font-size:11px;margin-top:4px;overflow-x:auto;">
-      <div style="display:grid;grid-template-columns:130px 90px 90px minmax(170px,1fr);gap:0;min-width:540px;">
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--accent);">Layer</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--accent);">Level</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--accent);">Pan</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--accent);">Treatment</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">Lead</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">0dB</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Centre</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">HPF ~80Hz, moderate comp, mostly dry</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">Doubles</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">−6 to −10dB</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">15–30% L/R</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">HPF 150–200Hz, heavy comp (~8:1), time-aligned</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">Ad-libs</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">−3 to −8dB</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">40–80% L/R</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Heavier FX, harder tuning, more reverb/delay</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">Harmonies</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">−8 to −14dB</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Wide</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Darker than lead, more reverb, sits behind</div>
-
-        <div style="padding:7px 10px 7px 0;color:var(--text);">Octave-down</div>
-        <div style="padding:7px 0;color:var(--muted);">−12 to −18dB</div>
-        <div style="padding:7px 0;color:var(--muted);">Centre</div>
-        <div style="padding:7px 0 7px 10px;color:var(--muted);">Felt more than heard; watch it against the 808</div>
+    <div class="dtable">
+      <div class="dt-grid" style="grid-template-columns:130px 90px 90px minmax(170px,1fr);min-width:540px;">
+        <div class="dt-row dt-h">
+          <div class="dt-k">Layer</div>
+          <div class="dt-k">Level</div>
+          <div class="dt-k">Pan</div>
+          <div class="dt-k">Treatment</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Lead</div>
+          <div class="dt-d">0dB</div>
+          <div class="dt-d">Centre</div>
+          <div class="dt-d">HPF ~80Hz, moderate comp, mostly dry</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Doubles</div>
+          <div class="dt-d">−6 to −10dB</div>
+          <div class="dt-d">15–30% L/R</div>
+          <div class="dt-d">HPF 150–200Hz, heavy comp (~8:1), time-aligned</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Ad-libs</div>
+          <div class="dt-d">−3 to −8dB</div>
+          <div class="dt-d">40–80% L/R</div>
+          <div class="dt-d">Heavier FX, harder tuning, more reverb/delay</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Harmonies</div>
+          <div class="dt-d">−8 to −14dB</div>
+          <div class="dt-d">Wide</div>
+          <div class="dt-d">Darker than lead, more reverb, sits behind</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Octave-down</div>
+          <div class="dt-d">−12 to −18dB</div>
+          <div class="dt-d">Centre</div>
+          <div class="dt-d">Felt more than heard; watch it against the 808</div>
+        </div>
       </div>
     </div>
     <div class="note yellow-note">⚠ Every one of these layers is competing for the same midrange as your lead melody. If the vocal stack is dense, the beat underneath has to give way — that's normal and correct. Strip a pad, dip the melodic bus, or thin the arrangement under the hook.</div>
@@ -439,7 +453,7 @@
   <div class="card teal">
     <div class="card-label">Setup</div>
     <h2>SENDS, NOT INSERTS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Put reverb and delay on return tracks.</strong> Route a send from each vocal insert to a dedicated reverb track and a dedicated delay track. Blend with the return's fader, keeping the send at 100% — the standard discipline from <a href="#mixing">Mixing Fundamentals</a>.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Put reverb and delay on return tracks.</strong> Route a send from each vocal insert to a dedicated reverb track and a dedicated delay track. Blend with the return's fader, keeping the send at 100% — the standard discipline from <a href="#mixing">Mixing Fundamentals</a>.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Why it matters more on vocals than anything else.</strong> Every vocal layer feeding the same reverb sits in the same room, which is what makes a stack sound like one coherent performance instead of six people in six different spaces.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>EQ the return, not just the reverb.</strong> High-pass the reverb return at 200–300Hz and often low-pass it around 8kHz. Low-end reverb is mud; high-end reverb amplifies sibilance into a hissy cloud. The tail should support the voice, not compete with it.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>De-ess the reverb send.</strong> A de-esser <em>before</em> the reverb stops "s" sounds from triggering long sibilant tails. This is a small move that cleans up a vocal mix dramatically.</div></div>
@@ -449,7 +463,7 @@
   <div class="card yellow">
     <div class="card-label">Reverb</div>
     <h2>VOCAL REVERB</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Pre-delay keeps the vocal upfront.</strong> This is the most important reverb control on a vocal. A gap of 10–30ms between the dry voice and the start of the tail lets the words land clearly before the space opens up behind them. Without pre-delay, reverb smears directly over the consonants.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Pre-delay keeps the vocal upfront.</strong> This is the most important reverb control on a vocal. A gap of 10–30ms between the dry voice and the start of the tail lets the words land clearly before the space opens up behind them. Without pre-delay, reverb smears directly over the consonants.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Sync pre-delay to the tempo.</strong> Instead of picking an arbitrary number, use a note value — a 1/32 or 1/16 note at your BPM. The reverb then breathes with the track instead of against it.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Rap vocals want less reverb than you think.</strong> Dense, fast delivery plus a long tail equals mush. Most modern rap sits fairly dry, using short plates and delay for space instead of big halls. Melodic and sung sections can take much more.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Decay: match it to the gaps.</strong> The tail should mostly finish before the next line starts. If reverb from bar 1 is still ringing under bar 2, shorten the decay or the track will lose definition.</div></div>
@@ -460,7 +474,7 @@
   <div class="card orange">
     <div class="card-label">Delay</div>
     <h2>VOCAL DELAY</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Slapback: 60–120ms, feedback at zero.</strong> A single short echo, no repeats. It thickens the vocal and adds a live, close feeling without any obvious effect. Below about 40ms you're into Haas-effect territory where it stops being an echo and becomes width instead.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Slapback: 60–120ms, feedback at zero.</strong> A single short echo, no repeats. It thickens the vocal and adds a live, close feeling without any obvious effect. Below about 40ms you're into Haas-effect territory where it stops being an echo and becomes width instead.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Avoid short synced note values on a busy beat.</strong> A 1/16 or 1/32 delay tends to get completely masked by hi-hats and percussion. Either commit to something long enough to hear (dotted 1/8) or use an unsynced slapback in the 60–120ms range.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Dotted 1/8 is the energy delay.</strong> Tempo-synced, a few repeats, blended low. It creates rhythmic movement that pushes against the beat and fills space between lines. The classic modern vocal delay.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Run a short and a long delay together.</strong> A 90ms slapback for intimacy plus a dotted 1/8 for energy, on separate sends, blended to taste. The vocal ends up feeling both tight and wide — much more dimensional than either alone.</div></div>
@@ -471,7 +485,7 @@
   <div class="card white">
     <div class="card-label">Technique</div>
     <h2>THROWS &amp; MOVEMENT</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>A "throw" is delay on one word only.</strong> Automate the delay send up for a single word at the end of a phrase, then back down. That word echoes off into the gap while the rest of the vocal stays dry and clear. It's the most-used vocal production move in rap and it costs nothing but an automation clip.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>A "throw" is delay on one word only.</strong> Automate the delay send up for a single word at the end of a phrase, then back down. That word echoes off into the gap while the rest of the vocal stays dry and clear. It's the most-used vocal production move in rap and it costs nothing but an automation clip.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Throw into the gaps, not over the next line.</strong> The whole point is to fill space. If the echo is still repeating when the next bar starts, shorten the throw or reduce the feedback.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Duck the effects under the dry vocal.</strong> Sidechain the reverb and delay returns to the lead vocal so the tails drop while words are being sung and swell in the gaps. You get a big-sounding space that never obscures a single word.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Automate reverb by section.</strong> Dry verses, wetter hooks. Or a sudden burst of reverb on the last word before a drop. Effects are arrangement tools — see <a href="#transitions">Transitions</a>.</div></div>
@@ -484,7 +498,7 @@
     <h2>COMMON VOCAL MISTAKES</h2>
     <div class="two-col">
       <div>
-        <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Recording too hot.</strong> Clipping at the input is unfixable. Peaks at <code>-6dBFS</code> cost you nothing on a 24-bit system.</div></div>
+        <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Recording too hot.</strong> Clipping at the input is unfixable. Peaks at <code>-6dBFS</code> cost you nothing on a 24-bit system.</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Printing effects to the take.</strong> Autotune, compression and EQ recorded into the file are permanent decisions made at the worst possible moment.</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Ignoring the room.</strong> No plugin removes reflections. Twenty minutes hanging blankets beats any amount of processing.</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Over-compressing to get it loud.</strong> 10dB from one compressor sounds squashed. Two stages of 3dB sound controlled.</div></div>

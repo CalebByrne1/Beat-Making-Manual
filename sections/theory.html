@@ -6,7 +6,7 @@
   <div class="card yellow">
     <div class="card-label">Foundation</div>
     <h2>BUILDING SCALES FROM STEPS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Major scale formula:</strong> W–W–H–W–W–W–H (whole and half steps). Sounds bright, resolved, positive.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Major scale formula:</strong> W–W–H–W–W–W–H (whole and half steps). Sounds bright, resolved, positive.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Natural minor formula:</strong> W–H–W–W–H–W–W. Sounds dark, emotional, introspective.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Half step = 1 semitone</strong> (adjacent piano keys, including black keys). Whole step = 2 semitones.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Starting point matters.</strong> The same 12 notes rearranged around a different root = different key, different emotional character.</div></div>
@@ -137,7 +137,7 @@
   <div class="card teal wide">
     <div class="card-label">Reference</div>
     <h2>ALL 12 MAJOR SCALES</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:8px;">
+    <div class="scale-grid">
       <div class="scale-card"><div class="scale-root">C</div><div class="scale-notes">C · D · E · F · G · A · B</div></div>
       <div class="scale-card"><div class="scale-root">G</div><div class="scale-notes">G · A · B · C · D · E · F#</div></div>
       <div class="scale-card"><div class="scale-root">D</div><div class="scale-notes">D · E · F# · G · A · B · C#</div></div>
@@ -156,7 +156,7 @@
   <div class="card orange wide">
     <div class="card-label">Reference</div>
     <h2>ALL 12 NATURAL MINOR SCALES</h2>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:8px;">
+    <div class="scale-grid">
       <div class="scale-card dark"><div class="scale-root dim">Am</div><div class="scale-notes">A · B · C · D · E · F · G</div></div>
       <div class="scale-card dark"><div class="scale-root dim">Em</div><div class="scale-notes">E · F# · G · A · B · C · D</div></div>
       <div class="scale-card dark"><div class="scale-root dim">Bm</div><div class="scale-notes">B · C# · D · E · F# · G · A</div></div>
@@ -176,7 +176,7 @@
     <div class="card-label">Reference</div>
     <h2>ALL 12 HARMONIC MINOR SCALES</h2>
     <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px;">Natural minor with the 7th raised a semitone. That one change creates a leading tone pulling hard back to the root, and a distinctive three-semitone leap between the 6th and 7th — the sound of dramatic, cinematic, vaguely Eastern minor. Formula: <strong>W–H–W–W–H–WH–H</strong>.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:8px;">
+    <div class="scale-grid">
       <div class="scale-card dark"><div class="scale-root dim">Am</div><div class="scale-notes">A · B · C · D · E · F · G#</div></div>
       <div class="scale-card dark"><div class="scale-root dim">Em</div><div class="scale-notes">E · F# · G · A · B · C · D#</div></div>
       <div class="scale-card dark"><div class="scale-root dim">Bm</div><div class="scale-notes">B · C# · D · E · F# · G · A#</div></div>
@@ -197,7 +197,7 @@
     <div class="card-label">Reference</div>
     <h2>ALL 12 MINOR PENTATONIC SCALES</h2>
     <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px;">Natural minor with the 2nd and 6th removed — the two notes most likely to clash. Five notes, nearly every combination works, and it's the safest place to start when writing a melody from scratch. Formula: <strong>1 · b3 · 4 · 5 · b7</strong>.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:8px;">
+    <div class="scale-grid">
       <div class="scale-card dark"><div class="scale-root dim">Am</div><div class="scale-notes">A · C · D · E · G</div></div>
       <div class="scale-card dark"><div class="scale-root dim">Em</div><div class="scale-notes">E · G · A · B · D</div></div>
       <div class="scale-card dark"><div class="scale-root dim">Bm</div><div class="scale-notes">B · D · E · F# · A</div></div>
@@ -217,7 +217,7 @@
     <div class="card-label">Reference</div>
     <h2>ALL 12 MAJOR PENTATONIC SCALES</h2>
     <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px;">Major with the 4th and 7th removed — the two notes that create tension. What's left is open, bright and impossible to make sound wrong. The go-to for uplifting leads, Afrobeats melodies and anything that needs to feel effortless. Formula: <strong>1 · 2 · 3 · 5 · 6</strong>.</p>
-    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-top:8px;">
+    <div class="scale-grid">
       <div class="scale-card"><div class="scale-root">C</div><div class="scale-notes">C · D · E · G · A</div></div>
       <div class="scale-card"><div class="scale-root">G</div><div class="scale-notes">G · A · B · D · E</div></div>
       <div class="scale-card"><div class="scale-root">D</div><div class="scale-notes">D · E · F# · A · B</div></div>
@@ -237,42 +237,50 @@
     <div class="card-label">Flavour</div>
     <h2>SIX SCALES WORTH STEALING</h2>
     <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:10px;">When minor and major both feel obvious, these give a melody an immediate identity. Each is shown from C and from A so you can hear the shape in two places. They all still resolve to the root — they just take stranger routes there.</p>
-    <div style="font-family:var(--mono);font-size:11px;margin-top:4px;overflow-x:auto;">
-      <div style="display:grid;grid-template-columns:minmax(180px,1.1fr) minmax(150px,1fr) minmax(150px,1fr) minmax(200px,1.4fr);gap:0;min-width:640px;">
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--accent);">Scale</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--accent);">From C</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--accent);">From A</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--accent);">Sounds like</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">Phrygian Dominant</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">C Db E F G Ab Bb</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">A Bb C# D E F G</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Spanish, flamenco, dark trap</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">Double Harmonic</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">C Db E F G Ab B</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">A Bb C# D E F G#</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Byzantine, exotic, menacing</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">Hungarian Minor</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">C D Eb F# G Ab B</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">A B C D# E F G#</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Gothic, cinematic, unstable</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">Lydian Dominant</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">C D E F# G A Bb</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">A B C# D# E F# G</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Floating, dreamy, filmic</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">Aeolian Dominant</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">C D E F G Ab Bb</div>
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--muted);">A B C# D E F G</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Bright but bittersweet</div>
-
-        <div style="padding:7px 10px 7px 0;color:var(--text);">Hirajoshi (5 note)</div>
-        <div style="padding:7px 10px 7px 0;color:var(--muted);">C D Eb G Ab</div>
-        <div style="padding:7px 10px 7px 0;color:var(--muted);">A B C E F</div>
-        <div style="padding:7px 0 7px 10px;color:var(--muted);">Japanese, sparse, meditative</div>
+    <div class="dtable">
+      <div class="dt-grid" style="grid-template-columns:minmax(180px,1.1fr) minmax(150px,1fr) minmax(150px,1fr) minmax(200px,1.4fr);min-width:640px;">
+        <div class="dt-row dt-h">
+          <div class="dt-k">Scale</div>
+          <div class="dt-k">From C</div>
+          <div class="dt-k">From A</div>
+          <div class="dt-k">Sounds like</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Phrygian Dominant</div>
+          <div class="dt-d">C Db E F G Ab Bb</div>
+          <div class="dt-d">A Bb C# D E F G</div>
+          <div class="dt-d">Spanish, flamenco, dark trap</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Double Harmonic</div>
+          <div class="dt-d">C Db E F G Ab B</div>
+          <div class="dt-d">A Bb C# D E F G#</div>
+          <div class="dt-d">Byzantine, exotic, menacing</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Hungarian Minor</div>
+          <div class="dt-d">C D Eb F# G Ab B</div>
+          <div class="dt-d">A B C D# E F G#</div>
+          <div class="dt-d">Gothic, cinematic, unstable</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Lydian Dominant</div>
+          <div class="dt-d">C D E F# G A Bb</div>
+          <div class="dt-d">A B C# D# E F# G</div>
+          <div class="dt-d">Floating, dreamy, filmic</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Aeolian Dominant</div>
+          <div class="dt-d">C D E F G Ab Bb</div>
+          <div class="dt-d">A B C# D E F G</div>
+          <div class="dt-d">Bright but bittersweet</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Hirajoshi (5 note)</div>
+          <div class="dt-d">C D Eb G Ab</div>
+          <div class="dt-d">A B C E F</div>
+          <div class="dt-d">Japanese, sparse, meditative</div>
+        </div>
       </div>
     </div>
     <div class="tip" style="margin-top:12px"><div class="tip-icon">▸</div><div class="tip-text"><strong>How to actually use these.</strong> Don't write a whole track in one. Write the progression in normal minor, then use the exotic scale for the <em>lead melody</em> only. You get the flavour without the whole beat sounding like a stock library.</div></div>
@@ -282,7 +290,7 @@
   <div class="card white">
     <div class="card-label">Emotional Reference</div>
     <h2>EMOTIONAL CHARACTER GUIDE</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Major:</strong> Happy, bright, uplifting, resolved. Works for celebratory, energetic, or positive tracks. Often combined with darker production elements for contrast.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Major:</strong> Happy, bright, uplifting, resolved. Works for celebratory, energetic, or positive tracks. Often combined with darker production elements for contrast.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Natural Minor:</strong> Sad, dark, introspective, emotional. The most common key for trap, emo rap, and most contemporary hip-hop production.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Dorian Mode:</strong> Minor with a raised 6th. Less dark than natural minor, has a "cool" quality. Used in jazz and some neo-soul influenced production.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Phrygian Mode:</strong> Minor with a lowered 2nd. Very dark, ominous, tense. Common in horror-adjacent production, Spanish-influenced sounds, dark trap.</div></div>
@@ -293,20 +301,22 @@
   <div class="card yellow">
     <div class="card-label">Emotional Reference</div>
     <h2>SCALE DEGREE EMOTIONAL CHARACTER</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>1 — Tonic:</strong> Home. Resolved, stable, grounded — the note every melody is ultimately trying to get back to, regardless of key.</div></div>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>2 — Supertonic:</strong> Mild tension, questioning, anticipatory. A passing note that wants to keep moving rather than sit still.</div></div>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>3 — Mediant:</strong> Defines the mood before anything else does. Major 3rd = brightness, minor 3rd = darkness — this single note is what tells your ear "happy" or "sad."</div></div>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>4 — Subdominant:</strong> Longing, lifting, builds toward something. Sets up a return to the 5 or the 1 — rarely a place to rest.</div></div>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>5 — Dominant:</strong> Strong tension, urgency, wants to resolve back to the 1. The other anchor point besides the root — land here to feel confident and settled.</div></div>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>6 — Submediant:</strong> Melancholy, introspection, emotional depth. In minor keys this is often where the emotional peak of a melody sits.</div></div>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>7 — Leading tone:</strong> Maximum tension, unstable, pulls hard toward the 1. The shortest distance to "home" — use it right before a resolution, not as a place to rest.</div></div>
+    <div class="seq">
+      <div class="seq-item"><div class="seq-text"><strong>Tonic:</strong> Home. Resolved, stable, grounded — the note every melody is ultimately trying to get back to, regardless of key.</div></div>
+      <div class="seq-item"><div class="seq-text"><strong>Supertonic:</strong> Mild tension, questioning, anticipatory. A passing note that wants to keep moving rather than sit still.</div></div>
+      <div class="seq-item"><div class="seq-text"><strong>Mediant:</strong> Defines the mood before anything else does. Major 3rd = brightness, minor 3rd = darkness — this single note is what tells your ear "happy" or "sad."</div></div>
+      <div class="seq-item"><div class="seq-text"><strong>Subdominant:</strong> Longing, lifting, builds toward something. Sets up a return to the 5 or the 1 — rarely a place to rest.</div></div>
+      <div class="seq-item"><div class="seq-text"><strong>Dominant:</strong> Strong tension, urgency, wants to resolve back to the 1. The other anchor point besides the root — land here to feel confident and settled.</div></div>
+      <div class="seq-item"><div class="seq-text"><strong>Submediant:</strong> Melancholy, introspection, emotional depth. In minor keys this is often where the emotional peak of a melody sits.</div></div>
+      <div class="seq-item"><div class="seq-text"><strong>Leading tone:</strong> Maximum tension, unstable, pulls hard toward the 1. The shortest distance to "home" — use it right before a resolution, not as a place to rest.</div></div>
+    </div>
     <div class="note" style="margin-top:10px;"><strong>Tension map (low → high pull):</strong> 1 and 5 are your anchors — land here to feel resolved and confident. 6 sits in the middle as emotional color. 7 is maximum pull toward the root, the degree that makes a resolution actually feel earned. In B minor: lean on the 6 and 7 for something unresolved and emotional, land on the 1 and 5 for something settled and confident. Same relationships in any key — it's not about the notes, it's about where they sit.</div>
   </div>
 
   <div class="card teal">
     <div class="card-label">Emotional Reference</div>
     <h2>MINOR KEY CHORD FINGERPRINTS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>i (minor):</strong> Dark home base. Settled but heavy — the chord everything else wants to resolve back to.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>i (minor):</strong> Dark home base. Settled but heavy — the chord everything else wants to resolve back to.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>ii° (diminished):</strong> Anxiety, dread, instability. Use sparingly as a passing chord to create unease right before a resolution.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>III (major):</strong> Bittersweet relief. A major chord borrowed from the relative major — feels like a brief lift out of the minor mood without losing it.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>iv (minor):</strong> Deep sadness, longing. A softer pull than the v/V — often used to build emotional weight before a hook.</div></div>
@@ -538,7 +548,7 @@
   <div class="card teal">
     <div class="card-label">Foundation</div>
     <h2>INTERVALS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>An interval</strong> is the distance between two notes. Intervals have both a number (2nd, 3rd, 5th) and a quality (major, minor, perfect, diminished, augmented).</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>An interval</strong> is the distance between two notes. Intervals have both a number (2nd, 3rd, 5th) and a quality (major, minor, perfect, diminished, augmented).</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Perfect 4th (5 semitones):</strong> Stable, open. Great for bass movement and power chords.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Perfect 5th (7 semitones):</strong> Open, powerful, neutral. Foundation of most chord structures.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Minor 3rd (3 semitones):</strong> Slightly dark, emotional. Building block of minor chords.</div></div>
@@ -550,7 +560,7 @@
   <div class="card yellow">
     <div class="card-label">Technique</div>
     <h2>TENSION & RELEASE</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Tension = unresolved energy.</strong> Dissonance, unstable chords, unfinished phrases. It makes the listener lean forward, waiting for something.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Tension = unresolved energy.</strong> Dissonance, unstable chords, unfinished phrases. It makes the listener lean forward, waiting for something.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Release = resolution.</strong> Consonance, stable chords, landing on the tonic. The payoff after the tension.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>The V–I move</strong> is the fundamental tension → release in Western music. The dominant chord (V) creates tension; resolving to the tonic (I) releases it.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Delay the resolution.</strong> Let the tension sit longer than expected for more emotional impact when release comes.</div></div>
@@ -561,7 +571,7 @@
   <div class="card orange">
     <div class="card-label">Advanced</div>
     <h2>CHORD EXTENSIONS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>7ths (maj7, m7, dom7):</strong> Adding the 7th degree gives chords color. Minor 7 (m7) = smooth, slightly dark. Major 7 (maj7) = dreamy. Dominant 7 (dom7) = bluesy tension.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>7ths (maj7, m7, dom7):</strong> Adding the 7th degree gives chords color. Minor 7 (m7) = smooth, slightly dark. Major 7 (maj7) = dreamy. Dominant 7 (dom7) = bluesy tension.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>9ths:</strong> Stacking a 9th (same as a 2nd, one octave up) adds richness without being "jazz-complex." Minor 9 = lush and dark. Major 9 = bright and expansive.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Add9 vs. maj9:</strong> Add9 = root + 3rd + 5th + 9th (no 7th). Less dense than full major 9. Good for keeping chords open.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Don't overthink extensions.</strong> A standard minor triad with good voicing often sounds better than a complex extended chord voiced poorly. Understand the basics thoroughly before chasing complexity.</div></div>
@@ -570,7 +580,7 @@
   <div class="card white">
     <div class="card-label">Keys & Modes</div>
     <h2>KEYS & MODES</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Relative major/minor:</strong> Every major key has a relative minor that shares the same notes (just a different root). C major = A minor. Use this to pivot between feelings without changing notes.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Relative major/minor:</strong> Every major key has a relative minor that shares the same notes (just a different root). C major = A minor. Use this to pivot between feelings without changing notes.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Modes are rotations of the major scale.</strong> Start on the 1st degree = Ionian (major). Start on the 6th degree = Aeolian (natural minor). Start on the 2nd = Dorian, 3rd = Phrygian, etc.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Common mode color changes from natural minor:</strong> Dorian (raised 6) = smoother. Phrygian (lowered 2) = darker/tenser. Harmonic minor (raised 7) = dramatic, Eastern flavor.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Modal borrowing</strong> (borrowed chords): Temporarily using a chord from any parallel scale that shares the same root — major, minor, or another mode. The fewer notes that differ between the two scales, the smoother the borrow sounds; the further apart they are, the more jarring and dramatic it feels. Example: in A minor, the iv chord is Dm (D-F-A). A Dorian (A-B-C-D-E-F#-G) shares every note with A natural minor except one — F raised to F#. Borrow that single note and Dm becomes D major (D-F#-A), the major IV — the same F# you'd find in A major too. That one-note change is what creates the sudden emotional lift you hear in a lot of melodic records.</div></div>
@@ -586,7 +596,7 @@
   <div class="card yellow">
     <div class="card-label">Fundamentals</div>
     <h2>SYNTH FUNDAMENTALS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Oscillator (sound source):</strong> Sine = pure, sub. Saw = bright, buzzy. Square = hollow, nasal. Triangle = soft, flute-like. This is where the raw material comes from.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Oscillator (sound source):</strong> Sine = pure, sub. Saw = bright, buzzy. Square = hollow, nasal. Triangle = soft, flute-like. This is where the raw material comes from.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Filter (tone shaping):</strong> Low-pass (removes highs) is most common. Cutoff controls where filtering starts. Resonance adds emphasis at the cutoff point — boosts character but can sound harsh high.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Envelope (shape over time):</strong> Attack controls the fade-in, Decay controls the fall to the Sustain level, and Release controls the fade-out after a key is released. The ADSR shapes whether sounds are plucky, droning, or anything between.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>LFO (modulation):</strong> A slow oscillator that moves another parameter over time. LFO on pitch = vibrato. LFO on filter = auto-wah. LFO on volume = tremolo.</div></div>
@@ -596,7 +606,7 @@
   <div class="card teal">
     <div class="card-label">Producer Textures</div>
     <h2>PI'ERRE / TM88 TEXTURES</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Dreamy pad layers:</strong> Soft attack, slow filter opening, long release. Detuned oscillators (2–3 cents) + subtle chorus for width. Low-pass filter with gentle cutoff sweep.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Dreamy pad layers:</strong> Soft attack, slow filter opening, long release. Detuned oscillators (2–3 cents) + subtle chorus for width. Low-pass filter with gentle cutoff sweep.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Bright pluck leads:</strong> Fast attack + fast decay, minimal sustain. Saw or triangle oscillator. High-pass to thin it, short reverb to space it. Pitch envelope for a slight attack transient.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Flute-style melodies:</strong> Sine or triangle base, slight vibrato LFO on pitch (rate: 5–6 Hz, depth: very low). Soft attack. Reverb heavily to float in the mix.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Bell/marimba tones:</strong> FM synthesis (op-to-op modulation) or physical-modeling. Fast attack, medium decay, no sustain, no release. Short room reverb.</div></div>
@@ -645,7 +655,7 @@
   <div class="card orange">
     <div class="card-label">Advanced</div>
     <h2>ADVANCED SOUND DESIGN</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>FM synthesis:</strong> One oscillator (modulator) modulates the frequency of another (carrier). High mod ratio = harsh, metallic. Low mod ratio = subtle, bell-like. Velocity controlling mod depth = expressive.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>FM synthesis:</strong> One oscillator (modulator) modulates the frequency of another (carrier). High mod ratio = harsh, metallic. Low mod ratio = subtle, bell-like. Velocity controlling mod depth = expressive.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Wavetable scanning:</strong> Moving through a wavetable over time (via LFO or envelope) creates evolving, animated textures. Set a slow LFO on the wavetable position for constant movement.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Unison detuning:</strong> Multiple oscillator voices slightly detuned apart. 2–4 voices at 5–15 cents detune = wide, warm. Too much = washy and pitch-unstable.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Velocity-to-filter:</strong> Map velocity to filter cutoff. Loud notes = brighter. Soft notes = darker. Makes programmed patches feel like they're being played, not triggered.</div></div>
@@ -662,7 +672,7 @@
   <div class="card white">
     <div class="card-label">Creative Constraints</div>
     <h2>BREAK THE RULES</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Leave the mistake in.</strong> If something sounds interesting when something goes wrong, keep it. The accident is often more interesting than the plan.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Leave the mistake in.</strong> If something sounds interesting when something goes wrong, keep it. The accident is often more interesting than the plan.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Work with a single sample.</strong> Chop, pitch, reverse, and layer a single drum break or vocal sample into a full beat. Constraints force creative solutions.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Start with the unusual element first.</strong> Most producers start with drums. Start with a texture, a melody, or a vocal chop instead and build the drums around that. Forces the groove to serve the sound instead of the other way around.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>No quantize.</strong> Play a melody in live with no quantization correction. The feel will be different — sometimes better. Use the imperfection as character.</div></div>
@@ -672,7 +682,7 @@
   <div class="card yellow">
     <div class="card-label">Rhythm</div>
     <h2>UNCONVENTIONAL GROOVES</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Half-time feel:</strong> Kick and snare pattern that implies half the actual BPM. Common in modern trap — the beat is 140 BPM but grooves feel like 70. Hi-hats stay fast, drum hits get sparse.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Half-time feel:</strong> Kick and snare pattern that implies half the actual BPM. Common in modern trap — the beat is 140 BPM but grooves feel like 70. Hi-hats stay fast, drum hits get sparse.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Polyrhythm:</strong> Two rhythms with different cycle lengths played simultaneously. 3 against 2, 4 against 3. Creates a shifting, phase-like feel that doesn't repeat until the cycles align.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Triplet 808 patterns:</strong> Quantize your 808 notes to triplets instead of straight 16ths. Changes the feel entirely — slower-sounding, more melodic, harder to predict.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Random-quantize drums:</strong> Apply subtle manual nudges to programmed drums (+/- 5–10ms off the grid). Each hit lands slightly before or after the beat. Sounds less robotic, more like a live drummer with feel.</div></div>
@@ -682,7 +692,7 @@
   <div class="card teal">
     <div class="card-label">Technique</div>
     <h2>RESAMPLING IDEAS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Resample your own beat.</strong> Record 4 bars of your mix, drop it back as a single sample, chop it. You get textures and transitions that weren't possible with the individual elements.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Resample your own beat.</strong> Record 4 bars of your mix, drop it back as a single sample, chop it. You get textures and transitions that weren't possible with the individual elements.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Resample + pitch down for pads.</strong> Record a high-frequency sound (hi-hats, bright synth). Pitch it down 1–2 octaves. Often becomes a usable texture or atmosphere that has no obvious relation to its source.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Pitch your reverb tail.</strong> Take a reverb return, record it as audio, pitch it up or down. Turns reverb into melodic content or dark ambient texture.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Velocity-chopped vocal samples:</strong> Chop a vocal into Edison, map the chops to a sampler with velocity zones. Low velocity triggers one syllable, high velocity another. Creates expressive vocal textures when played on a keyboard.</div></div>
@@ -692,7 +702,7 @@
   <div class="card orange">
     <div class="card-label">Prompts</div>
     <h2>TRY THIS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text">Write a melody with only 3 notes. Make it as interesting as possible through rhythm, velocity, and repetition variation.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text">Write a melody with only 3 notes. Make it as interesting as possible through rhythm, velocity, and repetition variation.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text">Make a beat with no kick drum. Let the 808 and hi-hats carry the low and high end alone.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text">Take a sample you've never used. Find one interesting moment (2–4 bars). Build an entirely new beat around just that moment.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text">Make a beat at a tempo you'd never normally use — 85 BPM, or 175 BPM. Forcing an unusual tempo forces unusual decisions.</div></div>
@@ -710,7 +720,7 @@
   <div class="card yellow">
     <div class="card-label">Active Listening</div>
     <h2>CRITICAL LISTENING</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Analyze, don't just enjoy.</strong> Pick 3–5 reference tracks and listen with intention. What's in the left channel? What's in the right? What frequencies dominate the low end? How long are the reverb tails?</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Analyze, don't just enjoy.</strong> Pick 3–5 reference tracks and listen with intention. What's in the left channel? What's in the right? What frequencies dominate the low end? How long are the reverb tails?</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Find the drum pattern first.</strong> Listen and tap along to isolate kick, snare, and hi-hat timing separately. Then try to recreate it from memory in your DAW.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Identify the key.</strong> Hum the root note of a song you know. Find it on a keyboard. Over time this becomes faster — this is how producers "hear" a key quickly.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Listen to genres you don't produce.</strong> House, jazz, classical, soul. Different genres solve the same musical problems (space, tension, energy) in completely different ways. Cross-pollination is underrated.</div></div>
@@ -720,7 +730,7 @@
   <div class="card teal">
     <div class="card-label">Pitch</div>
     <h2>HEARING PITCH</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Relative pitch.</strong> Recognizing that one note is a 5th above another. This is trainable. Play intervals daily — eventually you stop counting and start hearing the gap as a sound with a character.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Relative pitch.</strong> Recognizing that one note is a 5th above another. This is trainable. Play intervals daily — eventually you stop counting and start hearing the gap as a sound with a character.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Scale degrees by sound.</strong> The 7th degree sounds unresolved. The 5th sounds stable. The b3 sounds minor and dark. Learning these associations speeds up melody writing and transposing.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Tune 808s by ear.</strong> Play the 808 alongside the key chord and adjust pitch until the beating (warbling) stops. When it disappears, the 808 is tuned. This trains pitch sensitivity faster than any exercise.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Sing before playing.</strong> Hum or sing a melody before programming it. The ear leads the fingers. Melodies you sing are usually more natural than melodies you compose by trial and error on a keyboard.</div></div>
@@ -729,7 +739,7 @@
   <div class="card orange">
     <div class="card-label">Evaluation</div>
     <h2>EVALUATING YOUR MIX</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>A/B against a reference.</strong> Match loudness (use SPAN), then switch back and forth every 5–10 seconds. Your ear resets on the switch. Differences in low end, width, and high-end clarity become obvious.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>A/B against a reference.</strong> Match loudness (use SPAN), then switch back and forth every 5–10 seconds. Your ear resets on the switch. Differences in low end, width, and high-end clarity become obvious.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Listen at low volume.</strong> If balance disappears at quiet levels, something is wrong with frequency balance or relative levels.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Come back the next day.</strong> Fresh ears after sleep are the most reliable judge you have. What seemed finished the night before often reveals obvious issues after rest.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Test on multiple systems.</strong> Laptop speakers, phone, headphones, car, earbuds. A mix that sounds great on all of them is done. A mix that only sounds good on studio monitors isn't finished.</div></div>
@@ -746,7 +756,7 @@
   <div class="card teal">
     <div class="card-label">FL Studio Workflow</div>
     <h2>FL WORKFLOW TIPS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Use template projects.</strong> Save a project with your standard signal chain, pre-routed mixer tracks, and default instruments set up. Start every session from this template.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Use template projects.</strong> Save a project with your standard signal chain, pre-routed mixer tracks, and default instruments set up. Start every session from this template.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Color-code your mixer.</strong> Drums = one color, melodic elements = another, effects returns = another. You can navigate a complex mix in seconds by color without reading labels.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Use pattern clips for arrangement.</strong> Name each pattern clearly (Verse Drums, Hook Melody, Bridge Pad). In the playlist, you drag and drop labeled clips rather than trying to remember what nameless patterns are.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Render stems early.</strong> Before a session gets complex, render finished element groups (drums, melody, bass) as audio stems. Reduces CPU load and simplifies the session.</div></div>
@@ -756,7 +766,7 @@
   <div class="card yellow">
     <div class="card-label">Habits</div>
     <h2>PRODUCTIVE HABITS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Show up every day, even briefly.</strong> 20 minutes of focused work builds the skill faster than one 10-hour session a week. Consistency over intensity.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Show up every day, even briefly.</strong> 20 minutes of focused work builds the skill faster than one 10-hour session a week. Consistency over intensity.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Separate creation from evaluation.</strong> When writing: no second-guessing, no deleting. When mixing/arranging: no new ideas. The creative mode and the critical mode use different thinking — running them simultaneously kills both.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Finish things even when they're not good.</strong> A finished mediocre beat teaches more than an abandoned great idea. Finishing is its own skill. Build it deliberately.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Study your influences technically.</strong> Don't just listen to producers you admire — pull their beats apart. What key? What drum pattern? How many elements? Where does the melody sit in the frequency spectrum?</div></div>
@@ -766,7 +776,7 @@
   <div class="card orange">
     <div class="card-label">Perspective</div>
     <h2>MENTAL MODELS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Constraints are creative tools.</strong> "I can only use samples from this pack" or "I can only use 4 instruments" forces invention. Unlimited options cause paralysis.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Constraints are creative tools.</strong> "I can only use samples from this pack" or "I can only use 4 instruments" forces invention. Unlimited options cause paralysis.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Compare your work to itself, not to pros.</strong> Measuring your work against finished, mastered, mixed commercial releases is unfair to yourself. Compare to your beat from 3 months ago — the growth is what matters.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>The music doesn't have to mean anything to you when you make it.</strong> It doesn't have to feel meaningful or inspired. Good music is made through process and skill, not just feeling. Show up even when uninspired.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>You don't have to be original, you have to be honest.</strong> Chasing originality leads to overthinking and self-censorship. Chasing your honest reaction to sound leads to something only you could make.</div></div>
@@ -776,7 +786,7 @@
   <div class="card purple">
     <div class="card-label">Process</div>
     <h2>BE MORE INTENTIONAL</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Decide genre and mood before picking sounds.</strong> Sound selection should follow a decision, not replace one. Know what you're making and how it should feel before opening a single plugin or browsing a sample pack.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Decide genre and mood before picking sounds.</strong> Sound selection should follow a decision, not replace one. Know what you're making and how it should feel before opening a single plugin or browsing a sample pack.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Use a reference track every session, not just at mixdown.</strong> Load it before you write a single note. It anchors tempo, energy, and instrumentation choices while they're still cheap to change, not after the beat is already built around the wrong target.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Build a personal sound palette.</strong> A folder of go-to drum samples, synth presets, and processing chains you trust and reuse. A known, constrained palette lets you work fast and start developing a recognizable signature instead of re-discovering your sound from zero every session.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Constrain yourself on purpose.</strong> Four instruments max. One sample only. No hi-hats this time. Arbitrary limits remove the paralysis of infinite choice and force more decisive, characterful decisions than starting with everything available.</div></div>

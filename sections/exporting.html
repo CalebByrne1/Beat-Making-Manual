@@ -14,7 +14,7 @@
     <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px;"><code>File → Export → Wave file</code> (or <code>Ctrl + R</code>). These are the settings that actually matter, using FL's own names for them.</p>
     <div class="two-col">
       <div>
-        <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Format.</strong> WAV for anything that will be worked on further. MP3 only for previews and sharing. FL also offers OGG, FLAC, MIDI and M4A, but WAV and MP3 cover 99% of what a producer needs.</div></div>
+        <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Format.</strong> WAV for anything that will be worked on further. MP3 only for previews and sharing. FL also offers OGG, FLAC, MIDI and M4A, but WAV and MP3 cover 99% of what a producer needs.</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Bit depth.</strong> Your three options are 16-Bit integer, 24-Bit integer, and 32-Bit floating point. <strong>Use 24-bit for anything going to another human being</strong> — artists, mix engineers, stems, your own archive. 16-bit is only for the final file going to a distributor. 32-bit float is for when you want an exact, lossless capture of the project including anything above 0dBFS.</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Sample rate isn't in this dialog.</strong> It's set in Audio Settings and applies to the whole project. 44.1kHz is the standard for music and is what distributors expect. 48kHz is standard for video. Pick one at the start of a project and don't change it mid-way.</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Dithering.</strong> Only applies when you render to 16-bit. Leave it <em>off</em> for 24-bit exports and stems. See the dithering card below — the rule is "once, at the very end, only when going down to 16-bit."</div></div>
@@ -33,35 +33,43 @@
   <div class="card teal wide">
     <div class="card-label">Decision Table</div>
     <h2>WHICH FORMAT, WHEN</h2>
-    <div style="font-family:var(--mono);font-size:11px;margin-top:4px;overflow-x:auto;">
-      <div style="display:grid;grid-template-columns:minmax(150px,1fr) 165px minmax(200px,1.4fr);gap:0;min-width:560px;">
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--accent);">You're sending it to…</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--accent);">Export as</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--accent);">Why</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">An artist to record on</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">WAV · 24-bit · no dither</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">They need full quality to record and mix against.</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">A mix engineer</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Stems · WAV · 24-bit</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">They need the parts separately, with headroom. See Stems below.</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">A distributor (Spotify, Apple)</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">WAV · 16-bit · 44.1kHz · dithered</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">The standard delivery spec. This is the only place dithering belongs.</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">A beat store / YouTube</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">MP3 · 320kbps</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Small enough to stream, good enough to judge. Tagged for previews.</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">Your phone / the car</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">MP3 · 320kbps</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Reference listening. Convenience beats fidelity here.</div>
-
-        <div style="padding:7px 10px 7px 0;color:var(--text);">Your own archive</div>
-        <div style="padding:7px 0;color:var(--muted);">WAV · 24-bit + the .flp</div>
-        <div style="padding:7px 0 7px 10px;color:var(--muted);">Keep the project file. Future-you will want to change something.</div>
+    <div class="dtable">
+      <div class="dt-grid" style="grid-template-columns:minmax(150px,1fr) 165px minmax(200px,1.4fr);min-width:560px;">
+        <div class="dt-row dt-h">
+          <div class="dt-k">You're sending it to…</div>
+          <div class="dt-k">Export as</div>
+          <div class="dt-k">Why</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">An artist to record on</div>
+          <div class="dt-d">WAV · 24-bit · no dither</div>
+          <div class="dt-d">They need full quality to record and mix against.</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">A mix engineer</div>
+          <div class="dt-d">Stems · WAV · 24-bit</div>
+          <div class="dt-d">They need the parts separately, with headroom. See Stems below.</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">A distributor (Spotify, Apple)</div>
+          <div class="dt-d">WAV · 16-bit · 44.1kHz · dithered</div>
+          <div class="dt-d">The standard delivery spec. This is the only place dithering belongs.</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">A beat store / YouTube</div>
+          <div class="dt-d">MP3 · 320kbps</div>
+          <div class="dt-d">Small enough to stream, good enough to judge. Tagged for previews.</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Your phone / the car</div>
+          <div class="dt-d">MP3 · 320kbps</div>
+          <div class="dt-d">Reference listening. Convenience beats fidelity here.</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Your own archive</div>
+          <div class="dt-d">WAV · 24-bit + the .flp</div>
+          <div class="dt-d">Keep the project file. Future-you will want to change something.</div>
+        </div>
       </div>
     </div>
     <div class="note">⚠ Never work from an MP3. Every MP3 encode throws data away permanently, and encoding an MP3 that was decoded from another MP3 compounds it. MP3 is a delivery format, never a working one.</div>
@@ -70,7 +78,7 @@
   <div class="card orange">
     <div class="card-label">Pre-Flight</div>
     <h2>BEFORE YOU HIT EXPORT</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Check the master isn't clipping.</strong> Limiter ceiling at <code>-1dBTP</code>. If the master meter is hitting red anywhere in the track, fix it now — you cannot un-clip an exported file. See <a href="#mastering">Mastering</a>.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Check the master isn't clipping.</strong> Limiter ceiling at <code>-1dBTP</code>. If the master meter is hitting red anywhere in the track, fix it now — you cannot un-clip an exported file. See <a href="#mastering">Mastering</a>.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Un-solo and un-mute everything.</strong> The single most common export mistake: bouncing a beat with a track still soloed from an hour ago, or a muted element you forgot about. Look at the whole mixer before you render.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Set the song length properly.</strong> Make sure the Playlist selection or time marker covers the entire arrangement. A stray empty pattern clip at bar 200 gives you a beat with three minutes of silence stapled to the end.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Listen to the first second and the last five.</strong> A clipped first transient or a chopped reverb tail is invisible in the project and obvious in the file.</div></div>
@@ -81,7 +89,7 @@
   <div class="card white">
     <div class="card-label">The Technical Bit</div>
     <h2>BIT DEPTH, SAMPLE RATE &amp; DITHERING</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Sample rate = how often the waveform is measured.</strong> 44,100 times a second at 44.1kHz. It sets the highest frequency that can be represented — roughly half the sample rate, so ~22kHz at 44.1kHz, which is already above human hearing. Higher sample rates mostly buy you cleaner plugin processing, not audibly more "detail."</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Sample rate = how often the waveform is measured.</strong> 44,100 times a second at 44.1kHz. It sets the highest frequency that can be represented — roughly half the sample rate, so ~22kHz at 44.1kHz, which is already above human hearing. Higher sample rates mostly buy you cleaner plugin processing, not audibly more "detail."</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Bit depth = how precisely each measurement is stored.</strong> It sets the noise floor and therefore the usable dynamic range. 16-bit gives about 96dB, 24-bit about 144dB. That extra room is why you record and exchange files at 24-bit: you can track conservatively with plenty of headroom and still be nowhere near the noise floor.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>32-bit float is a different animal.</strong> It stores level as a floating point number, so it can hold values above 0dBFS without clipping — you can turn a "clipped" 32-bit float file back down and recover it. Useful for archiving a mix exactly as the project produced it. Not what you send anyone, and never dither it.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>What dithering actually does.</strong> Going from 24-bit to 16-bit throws away the bottom 8 bits. Without dither, the quietest material — reverb tails, fade-outs — doesn't fade smoothly, it degrades into harsh quantisation distortion. Dither adds a tiny amount of noise that converts that ugly distortion into a barely-audible hiss. You are trading a nasty artefact for a benign one.</div></div>
@@ -99,7 +107,7 @@
   <div class="card teal">
     <div class="card-label">Terminology</div>
     <h2>STEMS VS TRACK-OUTS</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Stems</strong> — grouped bounces. Drums as one file, bass as one file, melodies as one file, FX as one file. Usually four to eight files total. This is what you hand a mastering engineer or use for a live set.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Stems</strong> — grouped bounces. Drums as one file, bass as one file, melodies as one file, FX as one file. Usually four to eight files total. This is what you hand a mastering engineer or use for a live set.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Track-outs (multitracks)</strong> — every single element as its own file. Kick, snare, hats, 808, lead, pad, each vocal take. Twenty to sixty files is normal. This is what a mix engineer needs, and what "trackout lease" means on a beat store.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>In practice the words get used interchangeably.</strong> Producers say "stems" for both. When someone asks for stems, <em>ask which they mean</em> — sending eight grouped files to an engineer expecting forty individual tracks wastes everyone's day.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>When in doubt, send track-outs.</strong> An engineer can always group your individual files together. They can't separate a kick out of a drum stem.</div></div>
@@ -182,7 +190,7 @@
   <div class="card yellow">
     <div class="card-label">FL Studio</div>
     <h2>EXPORTING STEMS IN FL</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Tick "Split mixer tracks" in the export dialog.</strong> FL renders every mixer track to its own WAV, named after the mixer insert. It doesn't work for MP3, OGG or FLAC — WAV only, which is correct anyway.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Tick "Split mixer tracks" in the export dialog.</strong> FL renders every mixer track to its own WAV, named after the mixer insert. It doesn't work for MP3, OGG or FLAC — WAV only, which is correct anyway.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>This only works if your routing is clean.</strong> Every element needs its own mixer insert. Three sounds sharing insert 4 come out as one inseparable file. This is the payoff for the routing discipline in <a href="#fl-basics">FL Studio Basics</a> — and the reason to name and colour your inserts.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Name your mixer inserts before exporting.</strong> The insert name becomes the filename. Do it properly and you get <code>Kick.wav</code>, <code>808.wav</code>, <code>Lead Pluck.wav</code>. Skip it and you get <code>Insert 7.wav</code> and an engineer who has to open every file to find the snare.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Bypass the master chain first.</strong> Your limiter, master compressor and clipper should be off for a stem export. Whoever receives these files is going to do their own master — baked-in limiting just takes options away from them and can't be undone.</div></div>
@@ -193,17 +201,19 @@
   <div class="card orange">
     <div class="card-label">Non-Negotiables</div>
     <h2>THE FOUR STEM RULES</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>1 — Every stem starts at bar 1.</strong> Even if the element doesn't come in until bar 33, the file must start at the very beginning of the song with silence in front. This is what lets someone drag all forty files into a session, line them up at zero, and have everything in sync instantly. Getting this wrong is the number one stem delivery failure.</div></div>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>2 — Every stem is the same length.</strong> Same start, same end, all the way through the arrangement. Use "Leave remainder" so tails finish, and make sure every file gets the same treatment.</div></div>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>3 — No master processing, and leave headroom.</strong> Individual stems should peak around <code>-6dBFS</code>. Quiet stems are trivially turned up; clipped stems are ruined. Don't push levels "so it sounds good" — the mix engineer sets the balance.</div></div>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>4 — Send the key, BPM and a reference.</strong> Include a text file or message with the tempo, the key, and a rough mix of how you imagine it sounding. It takes thirty seconds and it prevents most of the back-and-forth.</div></div>
+    <div class="seq">
+      <div class="seq-item"><div class="seq-text"><strong>Every stem starts at bar 1.</strong> Even if the element doesn't come in until bar 33, the file must start at the very beginning of the song with silence in front. This is what lets someone drag all forty files into a session, line them up at zero, and have everything in sync instantly. Getting this wrong is the number one stem delivery failure.</div></div>
+      <div class="seq-item"><div class="seq-text"><strong>Every stem is the same length.</strong> Same start, same end, all the way through the arrangement. Use "Leave remainder" so tails finish, and make sure every file gets the same treatment.</div></div>
+      <div class="seq-item"><div class="seq-text"><strong>No master processing, and leave headroom.</strong> Individual stems should peak around <code>-6dBFS</code>. Quiet stems are trivially turned up; clipped stems are ruined. Don't push levels "so it sounds good" — the mix engineer sets the balance.</div></div>
+      <div class="seq-item"><div class="seq-text"><strong>Send the key, BPM and a reference.</strong> Include a text file or message with the tempo, the key, and a rough mix of how you imagine it sounding. It takes thirty seconds and it prevents most of the back-and-forth.</div></div>
+    </div>
     <div class="note yellow-note">⚠ Effects that <em>define</em> a sound should stay printed — a heavily distorted 808, a bit-crushed vocal chop, a filtered pad. Effects that are just mix decisions (broad EQ, bus compression, the master chain) should come off. If you can't tell which category something falls into, print it and mention it.</div>
   </div>
 
   <div class="card white">
     <div class="card-label">Packaging</div>
     <h2>NAMING &amp; FOLDER STRUCTURE</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>One zip, one clear name.</strong> <code>ByrneBeats - Nightdrive - 140bpm - Fmin - TRACKOUTS.zip</code> tells the recipient everything before they've opened anything.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>One zip, one clear name.</strong> <code>ByrneBeats - Nightdrive - 140bpm - Fmin - TRACKOUTS.zip</code> tells the recipient everything before they've opened anything.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Number the files so they sort usefully.</strong> Files sort alphabetically, so prefixing with numbers puts them in a sensible order in the engineer's import window rather than scattering drums between synths.</div></div>
     <div style="font-family:var(--mono);font-size:11px;color:var(--muted);background:var(--surface2);border:1px solid var(--border);padding:12px 14px;margin:12px 0;line-height:1.9;overflow-x:auto;">
       Nightdrive_140_Fmin/<br>
@@ -235,32 +245,38 @@
     <div class="card-label">Beat Store Tiers</div>
     <h2>WHAT EACH LICENCE TIER ACTUALLY INCLUDES</h2>
     <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px;">If you sell beats online, the tiers are mostly defined by <em>which files the buyer gets</em>. This is the structure BeatStars, Airbit and most producer sites use. Prices vary enormously by producer and reputation — the ranges below are typical starting points, not rules.</p>
-    <div style="font-family:var(--mono);font-size:11px;margin-top:4px;overflow-x:auto;">
-      <div style="display:grid;grid-template-columns:120px 150px 100px minmax(180px,1fr);gap:0;min-width:560px;">
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--accent4);">Tier</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--accent4);">Files delivered</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--accent4);">Typical</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--accent4);">Notes</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">MP3 lease</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">Untagged MP3</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">$20–40</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Entry tier. Usually capped stream/sales counts.</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">WAV lease</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">MP3 + WAV</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">$50–100</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Higher caps, usually adds music video rights.</div>
-
-        <div style="padding:7px 10px 7px 0;border-bottom:1px solid var(--border);color:var(--text);">Trackout lease</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">MP3 + WAV + stems</div>
-        <div style="padding:7px 0;border-bottom:1px solid var(--border);color:var(--muted);">$100–200</div>
-        <div style="padding:7px 0 7px 10px;border-bottom:1px solid var(--border);color:var(--muted);">Buyer can mix it properly. Often unlimited streams.</div>
-
-        <div style="padding:7px 10px 7px 0;color:var(--text);">Exclusive</div>
-        <div style="padding:7px 0;color:var(--muted);">Everything</div>
-        <div style="padding:7px 0;color:var(--muted);">$200+</div>
-        <div style="padding:7px 0 7px 10px;color:var(--muted);">Beat comes off the store. Read the contract carefully.</div>
+    <div class="dtable pu">
+      <div class="dt-grid" style="grid-template-columns:120px 150px 100px minmax(180px,1fr);min-width:560px;">
+        <div class="dt-row dt-h">
+          <div class="dt-k">Tier</div>
+          <div class="dt-k">Files delivered</div>
+          <div class="dt-k">Typical</div>
+          <div class="dt-k">Notes</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">MP3 lease</div>
+          <div class="dt-d">Untagged MP3</div>
+          <div class="dt-d">$20–40</div>
+          <div class="dt-d">Entry tier. Usually capped stream/sales counts.</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">WAV lease</div>
+          <div class="dt-d">MP3 + WAV</div>
+          <div class="dt-d">$50–100</div>
+          <div class="dt-d">Higher caps, usually adds music video rights.</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Trackout lease</div>
+          <div class="dt-d">MP3 + WAV + stems</div>
+          <div class="dt-d">$100–200</div>
+          <div class="dt-d">Buyer can mix it properly. Often unlimited streams.</div>
+        </div>
+        <div class="dt-row">
+          <div class="dt-v">Exclusive</div>
+          <div class="dt-d">Everything</div>
+          <div class="dt-d">$200+</div>
+          <div class="dt-d">Beat comes off the store. Read the contract carefully.</div>
+        </div>
       </div>
     </div>
     <div class="note">⚠ "Exclusive" rarely means you give up authorship — in most standard contracts you remain the writer and keep your publishing share, and the buyer gets exclusive use of the recording. Terms vary a lot between platforms and producers. If real money is involved, read the actual licence text rather than assuming, and get advice before signing anything unusual.</div>
@@ -269,7 +285,7 @@
   <div class="card yellow">
     <div class="card-label">Producer Tags</div>
     <h2>TAGGED VS UNTAGGED</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>What a producer tag is.</strong> A short vocal or sound stamp — your name, a phrase, a signature noise — dropped near the start of a beat and often repeated. It's branding and it's theft protection at the same time.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>What a producer tag is.</strong> A short vocal or sound stamp — your name, a phrase, a signature noise — dropped near the start of a beat and often repeated. It's branding and it's theft protection at the same time.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Tag the preview, not the purchase.</strong> The version streaming on your store, YouTube or Instagram should be tagged, usually several times through the beat so it can't be cut out. Anything a customer actually pays for is delivered clean.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Scatter tags irregularly.</strong> A tag only at 0:04 gets trimmed off in ten seconds. Tags at unpredictable points — mid-phrase, under the hook, over a transition — make a stolen preview unusable.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Keep the tag out of the way musically.</strong> Tune it to the key or make it percussive, sit it around <code>-12dBFS</code>, and place it where the arrangement has space. A tag that buries the melody costs you sales.</div></div>
@@ -279,7 +295,7 @@
   <div class="card teal">
     <div class="card-label">To an Artist</div>
     <h2>SENDING A BEAT TO AN ARTIST</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Send the WAV, and an MP3 too.</strong> The WAV is what they record against. The MP3 is what they'll actually listen to on their phone deciding whether they like it. Give them both and remove the friction.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Send the WAV, and an MP3 too.</strong> The WAV is what they record against. The MP3 is what they'll actually listen to on their phone deciding whether they like it. Give them both and remove the friction.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Put the BPM and key in the filename.</strong> <code>Nightdrive_140bpm_Fmin.wav</code>. Artists and their engineers need both constantly, and the filename is the one place the information can't get lost.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Leave headroom on a beat that will have vocals on it.</strong> If you've mastered the beat to full commercial loudness, there's no room left for a vocal to sit on top without the whole thing being re-limited. Peaks around <code>-6dBFS</code> and a lighter master chain gives the mix engineer somewhere to work.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Consider an intro count-in or a clean 4 bars.</strong> Some artists find it much easier to come in on a beat that gives them a bar or two of space at the top.</div></div>
@@ -289,7 +305,7 @@
   <div class="card orange">
     <div class="card-label">To an Engineer</div>
     <h2>SENDING TO A MIX ENGINEER</h2>
-    <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Track-outs, 24-bit, all starting at bar 1.</strong> The four stem rules above are the whole job. Get those right and you are already an easier client than most.</div></div>
+    <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text"><strong>Track-outs, 24-bit, all starting at bar 1.</strong> The four stem rules above are the whole job. Get those right and you are already an easier client than most.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Include the rough mix.</strong> Non-negotiable. It communicates intent faster than any email.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Include a reference track.</strong> A commercial record that sounds like the target. "Make it sound like this" is genuinely useful direction; "make it sound better" is not.</div></div>
     <div class="tip"><div class="tip-icon">▸</div><div class="tip-text"><strong>Say what's deliberate.</strong> If the 808 is meant to be that distorted, or the hats are meant to be that quiet, say so. Otherwise a good engineer will "fix" it.</div></div>
@@ -302,7 +318,7 @@
     <h2>THE DELIVERY CHECKLIST</h2>
     <div class="two-col">
       <div>
-        <div class="tip"><div class="tip-icon">▸</div><div class="tip-text">Nothing soloed, nothing accidentally muted.</div></div>
+        <div class="tip key"><div class="tip-icon">▸</div><div class="tip-text">Nothing soloed, nothing accidentally muted.</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text">Master isn't clipping — ceiling at <code>-1dBTP</code>.</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text">Correct bit depth for the destination (24-bit unless it's a distributor).</div></div>
         <div class="tip"><div class="tip-icon">▸</div><div class="tip-text">Dither only if rendering to 16-bit, and only once.</div></div>

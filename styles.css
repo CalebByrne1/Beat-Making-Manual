@@ -493,6 +493,173 @@
 .value-chip.te { border-color: var(--accent);  color: var(--accent); }
 
 /* ══════════════════════════════════════════
+   DATA TABLES
+   Replaces the per-cell inline styles that used to build these.
+   The grid template (and any min-width) stays inline on .dt-grid,
+   since the column widths are per-table data.
+══════════════════════════════════════════ */
+
+.dtable {
+  font-family: var(--mono);
+  font-size: 11px;
+  margin-top: 4px;
+  overflow-x: auto;
+}
+
+.dt-grid { display: grid; gap: 0; }
+
+/* display:contents lets each row be a real element for :last-child
+   while the cells still participate in the parent grid. */
+.dt-row { display: contents; }
+
+.dt-row > div {
+  padding: 7px 10px 7px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.dt-row > div:last-child { padding-right: 0; }
+.dt-row:last-child > div { border-bottom: none; }
+
+.dt-k { color: var(--accent); }   /* key / first column   */
+.dt-v { color: var(--text); }     /* value                */
+.dt-d { color: var(--muted); }    /* description          */
+
+.dt-row.dt-h > div { color: var(--accent); }
+
+.dtable.or .dt-k, .dtable.or .dt-h > div { color: var(--accent2); }
+.dtable.te .dt-k, .dtable.te .dt-h > div { color: var(--accent3); }
+.dtable.pu .dt-k, .dtable.pu .dt-h > div { color: var(--accent4); }
+.dtable.tx .dt-k, .dtable.tx .dt-h > div { color: var(--text); }
+.dtable.mu .dt-k, .dtable.mu .dt-h > div { color: var(--muted); }
+
+/* ══════════════════════════════════════════
+   SCALE GRID · TAGS · SUB-LABELS
+══════════════════════════════════════════ */
+
+.scale-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 4px 12px;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  text-decoration: none;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.tag:hover { border-color: var(--text); color: var(--text); }
+.tag.or { border-color: var(--accent2); color: var(--accent2); }
+.tag.te { border-color: var(--accent3); color: var(--accent3); }
+.tag.pu { border-color: var(--accent4); color: var(--accent4); }
+.tag.tx { border-color: var(--text);    color: var(--text); }
+.tag:not(.or):not(.te):not(.pu):not(.tx):not(.mu) { border-color: var(--accent); color: var(--accent); }
+
+.sublabel {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--accent);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.sublabel.or { color: var(--accent2); }
+.sublabel.te { color: var(--accent3); }
+.sublabel.pu { color: var(--accent4); }
+.sublabel.mu { color: var(--muted); }
+
+/* ══════════════════════════════════════════
+   KEY TIP
+   The lead tip in a long card, so every card has one thing
+   that reads first instead of N rows at identical volume.
+══════════════════════════════════════════ */
+
+.card { --card-accent: #555; }
+.card.yellow { --card-accent: var(--accent); }
+.card.teal   { --card-accent: var(--accent3); }
+.card.orange { --card-accent: var(--accent2); }
+.card.purple { --card-accent: var(--accent4); }
+.card.white  { --card-accent: #888888; }
+
+.tip.key {
+  /* inset shadow rather than a border so the row never shifts */
+  box-shadow: inset 2px 0 0 var(--card-accent);
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.tip.key .tip-icon { color: var(--card-accent); }
+.tip.key .tip-text { color: var(--text); }
+.tip.key .tip-text strong { color: #ffffff; }
+.tip.key.collapsed .tip-text { opacity: 0.7; }
+
+/* ══════════════════════════════════════════
+   NUMBERED SEQUENCE
+   For content that is genuinely ordered, where a flat list of
+   tips loses the fact that step 2 follows step 1.
+   (Distinct from .step-pattern, which draws drum grids.)
+══════════════════════════════════════════ */
+
+.seq { margin-top: 12px; counter-reset: seq; }
+
+.seq-item {
+  display: flex;
+  gap: 12px;
+  padding: 9px 0;
+  border-top: 1px solid var(--border);
+  align-items: flex-start;
+  cursor: pointer;
+  user-select: none;
+}
+
+.seq-item:hover { opacity: 0.82; }
+
+/* Collapsed: show the first line only, same as .tip */
+.seq-item.collapsed .seq-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0.55;
+}
+
+.seq-item::before {
+  counter-increment: seq;
+  content: counter(seq, decimal-leading-zero);
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.4;
+  color: var(--card-accent);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.seq-text {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.seq-text strong { color: var(--text); font-weight: 600; }
+.seq-text em { color: var(--text); font-style: italic; }
+.seq-text code {
+  font-family: var(--mono);
+  font-size: 10px;
+  background: var(--surface2);
+  padding: 1px 5px;
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════
    COMPRESSION RATIO VISUALIZER
 ══════════════════════════════════════════ */
 

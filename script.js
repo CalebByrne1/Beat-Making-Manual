@@ -33,7 +33,8 @@ function buildSearchIndex() {
     for (let el = anchor.nextElementSibling; el; el = el.nextElementSibling) {
       if (el.classList && el.classList.contains('section-anchor')) break;
       blocks.push(el.textContent);
-      el.querySelectorAll('.tip-text').forEach(t => tips.push(t.textContent.toLowerCase()));
+      // .seq-text is a numbered step; it counts as a tip for search and for the match badge.
+      el.querySelectorAll('.tip-text, .seq-text').forEach(t => tips.push(t.textContent.toLowerCase()));
     }
     index.set(anchor.id, {
       text: blocks.join(' ').toLowerCase().replace(/\s+/g, ' '),
@@ -107,7 +108,7 @@ let allTipsCollapsed = false;
 
 function toggleAllTips() {
   allTipsCollapsed = !allTipsCollapsed;
-  document.querySelectorAll('.tip').forEach(tip => {
+  document.querySelectorAll('.tip, .seq-item').forEach(tip => {
     tip.classList.toggle('collapsed', allTipsCollapsed);
   });
   const btn = document.getElementById('tips-toggle');
@@ -143,7 +144,7 @@ function initContent() {
   });
 
   // Collapsible tips — click to toggle between expanded and condensed
-  document.querySelectorAll('.tip').forEach(tip => {
+  document.querySelectorAll('.tip, .seq-item').forEach(tip => {
     tip.addEventListener('click', (e) => {
       if (e.target.closest('a')) return;
       // Don't collapse the tip the user is trying to select text in
